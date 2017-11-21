@@ -54,9 +54,11 @@
     <Compile Include="Problems\1-50\21-30\Problem22\Problem22.cs" />
     <Compile Include="Problems\1-50\31-40\Problem32\Problem32.cs" />
     <Compile Include="Problems\1-50\31-40\Problem35\Problem35.cs" />
+    <Compile Include="Problems\1-50\31-40\Problem36\Problem36.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Factorization.cs" />
+    <Compile Include="Utils\Palindrome.cs" />
     <Compile Include="Utils\Permutation.cs" />
     <Compile Include="Problems\1-50\21-30\Problem24\Problem24.cs" />
     <Compile Include="Problems\1-50\21-30\Problem26\Problem26.cs" />
