@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Utils
 {
     public class Permutation<T> where T : IComparable<T>
     {
@@ -15,10 +15,6 @@ namespace ProjectEuler.Problems
         };
 
         private List<T> _set;
-        private List<List<T>> _permutations;
-        private long _count = 0;
-
-        private PermutationState _state;
 
         public Permutation(IEnumerable<T> set)
         {
@@ -68,7 +64,6 @@ namespace ProjectEuler.Problems
         public List<List<T>> AllPermutations()
         {
             var set = new List<T>(_set);
-            _permutations = new List<List<T>>();
             return Permute(set, 0, set.Count - 1).ToList();
         }
 
@@ -83,34 +78,33 @@ namespace ProjectEuler.Problems
                 for (int i = start; i <= end; i++)
                 {
                     Swap(set, start, i);
-                    Permute(set, start + 1, end);
+                    foreach (var v in Permute(set, start + 1, end))
+                    {
+                        yield return v;
+                    }
                     Swap(set, start, i);
                 }
             }
         }
 
-        private void Swap<T>(List<T> set, int a, int b)
+        private void Swap(List<T> set, int a, int b)
         {
-            T temp = set[a];
+            var temp = set[a];
             set[a] = set[b];
             set[b] = temp;
         }
 
-        private class PermutationState
+        public IEnumerable<List<T>> Cycles()
         {
-            public PermutationState(List<T> set)
+            T top;
+            var set = new List<T>(_set);
+            for (int i = 0; i < set.Count; i++)
             {
-                _currentSet = new List<T>(set);
-                _currentPermutations = new List<List<T>>();
-                count = 0;
-                start = 0;
-                end = set.Count - 1;
+                yield return new List<T>(set);
+                top = set[0];
+                set.RemoveAt(0);
+                set.Add(top);
             }
-            public List<T> _currentSet { get; set; }
-            public List<List<T>> _currentPermutations { get; set; }
-            public long count { get; set; }
-            public int start { get; set; }
-            public int end { get; set; }
         }
     }
 }

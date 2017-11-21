@@ -47,13 +47,16 @@
     <Compile Include="Problems\Problem17\Problem17.cs" />
     <Compile Include="Problems\Problem19\Problem19.cs" />
     <Compile Include="Problems\Problem22\Problem22.cs" />
-    <Compile Include="Problems\Problem24\Permutation.cs" />
+    <Compile Include="Problems\Problem35\Problem35.cs" />
+    <Compile Include="Utils\Permutation.cs" />
     <Compile Include="Problems\Problem24\Problem24.cs" />
     <Compile Include="Problems\Problem26\Problem26.cs" />
     <Compile Include="Problems\Problem27\Problem27.cs" />
     <Compile Include="Problems\Problem28\Problem28.cs" />
     <Compile Include="Problems\Problem29\Problem29.cs" />
     <Compile Include="Problems\Problem31\Problem31.cs" />
+    <Compile Include="Problems\Problem33\Problem33.cs" />
+    <Compile Include="Problems\Problem34\Problem34.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Coins.cs" />
