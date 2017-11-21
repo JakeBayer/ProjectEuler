@@ -16,7 +16,7 @@ namespace ProjectEuler.Problems
 
         public string Run()
         {
-            var primes = Primes.GenerateUpTo(1000000);
+            var primes = Primes.ToLongHash(1000000);
             long longest = 0, maxA = 0, maxB = 0;
             for (long b = 2; b <= 1000; b++)
             {

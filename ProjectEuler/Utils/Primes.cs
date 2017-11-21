@@ -9,44 +9,94 @@ namespace ProjectEuler.Utils
 {
     public static class Primes
     {
-        public static HashSet<long> GenerateUpTo(long i)
+        private static bool[] Compositness(long max)
         {
-            var arr = new bool[i + 1];
-            for (long j = 0; j < i + 1; j++)
+            var t = max + 1;
+            var compositness = new bool[max + 1];
+            compositness[0] = true;
+            compositness[1] = true;
+
+            for (long i = 4; i < max + 1; i += 2)
             {
-                arr[j] = true;
+                compositness[i] = true;
             }
-            arr[0] = false;
-            arr[1] = false;
-
-            for (long j = 4; j < i+1; j += 2)
+            for (long i = 3; i < (long)Math.Sqrt(max + 1); i += 2)
             {
-                arr[j] = false;
-            }
-
-            long root = (long)Math.Sqrt(i + 1);
-
-            for (long j = 3; j <= root; j += 2)
-            {
-                if (arr[j])
+                if (!compositness[i])
                 {
-                    for (long k = j*2; k < i+1; k +=j)
+                    for (long j = 2; j <= (max + 1) / i - 1; j++)
                     {
-                        arr[k] = false;
+                        compositness[i * j] = true;
                     }
                 }
             }
+            return compositness;
+        }
 
-            HashSet<long> primes = new HashSet<long>();
-            primes.Add(2);
-            for (long j = 3; j < i + 1; j += 2)
+        public static List<long> ToLongList(long max)
+        {
+            var compositness = Compositness(max);
+            var Primes = new List<long> { 2L };
+            for (long i = 3L; i < max; i += 2)
             {
-                if (arr[j])
-                {
-                    primes.Add(j);
-                }
+                if (!compositness[i]) Primes.Add(i);
             }
-            return primes;
+            return Primes;
+        }
+
+        public static List<int> ToIntList(int max)
+        {
+            var compositness = Compositness(max);
+            var Primes = new List<int> { 2 };
+            for (int i = 3; i < max; i += 2)
+            {
+                if (!compositness[i]) Primes.Add(i);
+            }
+            return Primes;
+        }
+
+        public static HashSet<long> ToLongHash(long max)
+        {
+            var compositness = Compositness(max);
+            var Primes = new HashSet<long> { 2L };
+            for (long i = 3L; i < max; i += 2)
+            {
+                if (!compositness[i]) Primes.Add(i);
+            }
+            return Primes;
+        }
+
+        public static HashSet<int> ToIntHash(int max)
+        {
+            var compositness = Compositness(max);
+            var Primes = new HashSet<int> { 2 };
+            for (int i = 3; i < max; i += 2)
+            {
+                if (!compositness[i]) Primes.Add(i);
+            }
+            return Primes;
+        }
+
+        public static SortedSet<long> ToLongSortedSet(long max)
+        {
+            var compositness = Compositness(max);
+            var Primes = new SortedSet<long> { 2L };
+            for (long i = 3L; i < max; i += 2)
+            {
+                if (!compositness[i]) Primes.Add(i);
+            }
+            return Primes;
+        }
+
+        public static SortedSet<int> ToIntSortedSet(int max)
+        {
+            var compositness = Compositness(max);
+            var Primes = new SortedSet<int> { 2 };
+            for (int i = 3; i < max; i += 2)
+            {
+                if (!compositness[i]) Primes.Add(i);
+            }
+            return Primes;
         }
     }
 }

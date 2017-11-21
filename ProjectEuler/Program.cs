@@ -11,7 +11,7 @@ namespace ProjectEuler
     {
         static void Main(string[] args)
         {
-            var problem = new Problem35();
+            var problem = new Problem18();
             Console.WriteLine(problem.Run());
         }
     }
