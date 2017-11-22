@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,17 +26,12 @@ namespace ProjectEuler.Problems
                     currentDigits.AddRange((i * multiplicand).ToString().Select(c => int.Parse(c.ToString())));
                     multiplicand++;
                 }
-                if (currentDigits.Count == 9 && IsPandigital(currentDigits))
+                if (currentDigits.Count == 9 && Pandigital.Is(currentDigits))
                 {
                     ans.Add(long.Parse(currentDigits.Aggregate("", (acc, curr) => acc + curr.ToString())));
                 }
             }
             return ans.Max().ToString();
-        }
-
-        private bool IsPandigital(IEnumerable<int> set)
-        {
-            return _digits.SetEquals(set);
         }
     }
 }
