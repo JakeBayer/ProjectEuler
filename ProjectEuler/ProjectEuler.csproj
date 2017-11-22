@@ -64,12 +64,17 @@
     <Compile Include="Problems\1-50\41-50\Problem42\Problem42.cs" />
     <Compile Include="Problems\1-50\41-50\Problem43\Problem43.cs" />
     <Compile Include="Problems\1-50\41-50\Problem44\Problem44.cs" />
+    <Compile Include="Problems\1-50\41-50\Problem45\Problem45.cs" />
+    <Compile Include="Problems\1-50\41-50\Problem46\Problem46.cs" />
+    <Compile Include="Problems\1-50\41-50\Problem47\Problem47.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Factorization.cs" />
+    <Compile Include="Utils\GeometricNumbers\GeometricNumbers.cs" />
+    <Compile Include="Utils\GeometricNumbers\Hexagonal.cs" />
     <Compile Include="Utils\Palindrome.cs" />
     <Compile Include="Utils\Pandigital.cs" />
-    <Compile Include="Utils\Pentagonal.cs" />
+    <Compile Include="Utils\GeometricNumbers\Pentagonal.cs" />
     <Compile Include="Utils\Permutation.cs" />
     <Compile Include="Problems\1-50\21-30\Problem24\Problem24.cs" />
     <Compile Include="Problems\1-50\21-30\Problem26\Problem26.cs" />
@@ -83,7 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Coins.cs" />
     <Compile Include="Utils\Primes.cs" />
-    <Compile Include="Utils\Triangular.cs" />
+    <Compile Include="Utils\GeometricNumbers\Triangular.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
