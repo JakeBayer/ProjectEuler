@@ -15,7 +15,7 @@ namespace ProjectEuler.Utils
         }
         protected override int baseVal => _base;
 
-        public override long Explicit(long n)
+        protected override long ExplicitFormula(long n)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,13 @@ namespace ProjectEuler.Utils
     public abstract class GeometricNumberBase
     {
         protected abstract int baseVal {get;}
+        protected abstract long ExplicitFormula(long n);
 
         private static GeometricNumberGenerator _generator;
 
         public GeometricNumberBase()
         {
-            _generator = new GeometricNumberGenerator(i => (baseVal - 1) * i - (baseVal - 2));
+            _generator = new GeometricNumberGenerator(i => (baseVal - 1) * i - (baseVal - 2), ExplicitFormula);
         }
 
         public static bool Is(int n) => Is(Convert.ToInt64(n));
@@ -40,17 +41,22 @@ namespace ProjectEuler.Utils
 
         public HashSet<long> GenerateUpTo(long n) => _generator.GenerateUpTo(n);
 
-        public abstract long Explicit(long n);
+        public static long Explicit(long n)
+        {
+            return _generator.Explicit(n);
+        }
 
         private class GeometricNumberGenerator
         {
             private long _max = 0, _curr = 0;
             public HashSet<long> _numbers = new HashSet<long> { 0 };
             private Func<long, long> _diffGenerator;
+            private Func<long, long> _explicitGenerator;
 
-            public GeometricNumberGenerator(Func<long, long> diffGenerator)
+            public GeometricNumberGenerator(Func<long, long> implicitDiffGenerator, Func<long, long> explicitGenerator)
             {
-                _diffGenerator = diffGenerator;
+                _diffGenerator = implicitDiffGenerator;
+                _explicitGenerator = explicitGenerator;
             }
 
             public HashSet<long> GenerateUpTo(long n)
@@ -82,6 +88,8 @@ namespace ProjectEuler.Utils
                 }
                 return _numbers.Contains(n);
             }
+
+            public long Explicit(long n) => _explicitGenerator(n);
         }
     }
 }

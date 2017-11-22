@@ -11,12 +11,10 @@ namespace ProjectEuler.Utils
     /// </summary>
     public class Triangular : GeometricNumberBase
     {
-        static Triangular()
-        {
-        }
+        static Triangular() { }
 
         protected override int baseVal => 3;
 
-        public override long Explicit(long n) => (n * (n + 1)) / 2;
+        protected override long ExplicitFormula(long n) => (n * (n + 1)) / 2;
     }
 }

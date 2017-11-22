@@ -12,6 +12,6 @@ namespace ProjectEuler.Utils
 
         protected override int baseVal => 5;
 
-        public override long Explicit(long n) => (n * (3 * n - 1)) / 2;
+        protected override long ExplicitFormula(long n) => (n * (3 * n - 1)) / 2;
     }
 }

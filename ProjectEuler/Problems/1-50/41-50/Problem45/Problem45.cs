@@ -15,7 +15,7 @@ namespace ProjectEuler.Problems
             bool found = false;
             while (!found)
             {
-                hex_n = Hexagonal.Hexagon(n);
+                hex_n = Hexagonal.Explicit(n);
                 n++;
                 if (Pentagonal.Is(hex_n))
                 {

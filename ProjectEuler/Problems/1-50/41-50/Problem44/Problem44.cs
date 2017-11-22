@@ -18,7 +18,7 @@ namespace ProjectEuler.Problems
             // Search for first occurance
             while (min == long.MaxValue)
             {
-                next = Pentagonal.Pentagon(current);
+                next = Pentagonal.Explicit(current);
                 current++;
                 foreach(var pentagonal in pentagonals)
                 {
@@ -32,7 +32,7 @@ namespace ProjectEuler.Problems
 
 
             // Search until no pentagonals could possibly be closer
-            next = Pentagonal.Pentagon(current);
+            next = Pentagonal.Explicit(current);
             current++;
             while (next - pentagonals.Last() < min)
             {
@@ -44,7 +44,7 @@ namespace ProjectEuler.Problems
                     }
                 }
                 pentagonals.Add(next);
-                next = Pentagonal.Pentagon(current);
+                next = Pentagonal.Explicit(current);
                 current++;
             }
             return min.ToString();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,9 @@ namespace ProjectEuler.Problems
     {
         public string Run()
         {
-            throw new NotImplementedException();
+            var factorizations = Factorization.Factorize(Enumerable.Range(1, 10000000).Cast<long>());
+            
+
         }
     }
 }
