@@ -16,5 +16,10 @@ namespace ProjectEuler.Utils
         protected override int baseVal => 3;
 
         protected override long ExplicitFormula(long n) => (n * (n + 1)) / 2;
+
+        protected override long ImplicitDifferenceFunction(long n)
+        {
+            return n;
+        }
     }
 }

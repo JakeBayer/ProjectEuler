@@ -67,6 +67,8 @@
     <Compile Include="Problems\1-50\41-50\Problem45\Problem45.cs" />
     <Compile Include="Problems\1-50\41-50\Problem46\Problem46.cs" />
     <Compile Include="Problems\1-50\41-50\Problem47\Problem47.cs" />
+    <Compile Include="Problems\1-50\41-50\Problem48\Problem48.cs" />
+    <Compile Include="Problems\1-50\41-50\Problem49\Problem49.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Factorization.cs" />

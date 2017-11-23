@@ -26,11 +26,16 @@ namespace ProjectEuler.Utils
         protected abstract int baseVal {get;}
         protected abstract long ExplicitFormula(long n);
 
+        protected virtual long ImplicitDifferenceFunction(long n)
+        {
+            return (baseVal - 1) * n - (baseVal - 2);
+        }
+
         private static GeometricNumberGenerator _generator;
 
         public GeometricNumberBase()
         {
-            _generator = new GeometricNumberGenerator(i => (baseVal - 1) * i - (baseVal - 2), ExplicitFormula);
+            _generator = new GeometricNumberGenerator(ImplicitDifferenceFunction, ExplicitFormula);
         }
 
         public static bool Is(int n) => Is(Convert.ToInt64(n));
