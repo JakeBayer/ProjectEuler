@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Utils
 {
-    public class Permutation<T> where T : IComparable<T>
+    public class Permutor<T> where T : IComparable<T>
     {
         private List<T> _set;
 
-        public Permutation(IEnumerable<T> set)
+        public Permutor(IEnumerable<T> set)
         {
             _set = set.ToList();
         }
@@ -25,10 +25,16 @@ namespace ProjectEuler.Utils
             return set;
         }
 
-        public bool NextPermutation(List<T> set)
+        public List<T> NextPermutation()
+        {
+            NextPermutation(_set);
+            return _set;
+        }
+
+        private bool NextPermutation(List<T> set)
         {
             // Find non-increasing suffix
-            int i = set.Count- 1;
+            int i = set.Count - 1;
             while (i > 0 && set[i - 1].CompareTo(set[i]) >= 0)
                 i--;
             if (i <= 0)
@@ -54,20 +60,17 @@ namespace ProjectEuler.Utils
             }
             return true;
         }
+    }
 
-        public List<List<T>> AllPermutations()
-        {
-            var set = new List<T>(_set);
-            return Permute(set, 0, set.Count - 1).ToList();
-        }
-
-        public static List<List<T>> AllPermutations(IEnumerable<T> seed)
+    public static class Permutation
+    {
+        public static List<List<T>> AllPermutations<T>(IEnumerable<T> seed)
         {
             var set = new List<T>(seed);
             return Permute(set, 0, set.Count - 1).ToList();
         }
 
-        private static IEnumerable<List<T>> Permute(List<T> set, int start, int end)
+        private static IEnumerable<List<T>> Permute<T>(List<T> set, int start, int end)
         {
             if (start == end)
             {
@@ -87,27 +90,14 @@ namespace ProjectEuler.Utils
             }
         }
 
-        private static void Swap(List<T> set, int a, int b)
+        private static void Swap<T>(List<T> set, int a, int b)
         {
             var temp = set[a];
             set[a] = set[b];
             set[b] = temp;
         }
 
-        public IEnumerable<List<T>> Cycles()
-        {
-            T top;
-            var set = new List<T>(_set);
-            for (int i = 0; i < set.Count; i++)
-            {
-                yield return new List<T>(set);
-                top = set[0];
-                set.RemoveAt(0);
-                set.Add(top);
-            }
-        }
-
-        public static IEnumerable<List<T>> Cycles(IEnumerable<T> seed)
+        public static IEnumerable<List<T>> Cycles<T>(IEnumerable<T> seed)
         {
             T top;
             var set = new List<T>(seed);
@@ -119,5 +109,11 @@ namespace ProjectEuler.Utils
                 set.Add(top);
             }
         }
-    }
+
+        public static bool IsPermutationOf<T>(this IEnumerable<T> set, IEnumerable<T> other)
+        {
+            var hashedSet = new HashSet<T>(set);
+            return hashedSet.SetEquals(other);
+        }
+    } 
 }

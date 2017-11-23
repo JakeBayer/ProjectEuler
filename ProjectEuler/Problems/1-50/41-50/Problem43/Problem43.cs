@@ -12,9 +12,7 @@ namespace ProjectEuler.Problems
         private List<int> _primes = Primes.ToIntList(18);
         public string Run()
         {
-
-            var permutor = new Permutation<int>(Enumerable.Range(0, 10));
-            var allPandigitals = permutor.AllPermutations();
+            var allPandigitals = Permutation.AllPermutations(Enumerable.Range(0, 10));
             var allOnesICareAbout = allPandigitals.Where(SuperSpecificFunctionForThisProblem).Select(p => p.Aggregate("", (acc, curr) => acc + curr.ToString())).Select(long.Parse);
 
             return allOnesICareAbout.Sum().ToString();

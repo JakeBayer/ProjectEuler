@@ -20,7 +20,7 @@ namespace ProjectEuler.Problems
             {
                 if (primes.Contains(i))
                 {
-                    var cycles = new Permutation<int>(i.ToString().Select(c => int.Parse(c.ToString()))).Cycles().Select(p => int.Parse(String.Join("", p.Select(c => c.ToString()))));
+                    var cycles = Permutation.Cycles(i.ToString().Select(c => int.Parse(c.ToString()))).Select(p => int.Parse(String.Join("", p.Select(c => c.ToString()))));
                     if (cycles.All(p => primes.Contains(p)))
                     {
                         ans.UnionWith(cycles);
