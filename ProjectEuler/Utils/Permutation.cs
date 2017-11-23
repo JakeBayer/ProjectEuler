@@ -8,12 +8,6 @@ namespace ProjectEuler.Utils
 {
     public class Permutation<T> where T : IComparable<T>
     {
-        private enum PermutationMode
-        {
-            GetAll = 1,
-            StopAt = 2,
-        };
-
         private List<T> _set;
 
         public Permutation(IEnumerable<T> set)
@@ -67,7 +61,13 @@ namespace ProjectEuler.Utils
             return Permute(set, 0, set.Count - 1).ToList();
         }
 
-        private IEnumerable<List<T>> Permute(List<T> set, int start, int end)
+        public static List<List<T>> AllPermutations(IEnumerable<T> seed)
+        {
+            var set = new List<T>(seed);
+            return Permute(set, 0, set.Count - 1).ToList();
+        }
+
+        private static IEnumerable<List<T>> Permute(List<T> set, int start, int end)
         {
             if (start == end)
             {
@@ -87,7 +87,7 @@ namespace ProjectEuler.Utils
             }
         }
 
-        private void Swap(List<T> set, int a, int b)
+        private static void Swap(List<T> set, int a, int b)
         {
             var temp = set[a];
             set[a] = set[b];
@@ -98,6 +98,19 @@ namespace ProjectEuler.Utils
         {
             T top;
             var set = new List<T>(_set);
+            for (int i = 0; i < set.Count; i++)
+            {
+                yield return new List<T>(set);
+                top = set[0];
+                set.RemoveAt(0);
+                set.Add(top);
+            }
+        }
+
+        public static IEnumerable<List<T>> Cycles(IEnumerable<T> seed)
+        {
+            T top;
+            var set = new List<T>(seed);
             for (int i = 0; i < set.Count; i++)
             {
                 yield return new List<T>(set);
