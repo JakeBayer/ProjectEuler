@@ -71,9 +71,12 @@
     <Compile Include="Problems\1-50\41-50\Problem48\Problem48.cs" />
     <Compile Include="Problems\1-50\41-50\Problem49\Problem49.cs" />
     <Compile Include="Problems\1-50\41-50\Problem50\Problem50.cs" />
-    <Compile Include="Problems\51-100\51-60\Problem51.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem51\Problem51.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem52\Problem52.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem53\Problem53.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Huge.cs" />
+    <Compile Include="Utils\Combinatorics.cs" />
     <Compile Include="Utils\Factorization.cs" />
     <Compile Include="Utils\GeometricNumbers\GeometricNumbers.cs" />
     <Compile Include="Utils\GeometricNumbers\Hexagonal.cs" />
