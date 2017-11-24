@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Utils
 {
@@ -33,70 +29,26 @@ namespace ProjectEuler.Utils
             return compositness;
         }
 
-        public static List<long> ToLongList(long max)
+        public static T UpTo<T>(long max) where T : ICollection<long>, new()
         {
             var compositness = Compositness(max);
-            var Primes = new List<long> { 2L };
-            for (long i = 3L; i < max; i += 2)
+            var primes = new T { 2L };
+            for (long i = 3L; i < compositness.LongLength; i += 2)
             {
-                if (!compositness[i]) Primes.Add(i);
+                if (!compositness[i]) primes.Add(i);
             }
-            return Primes;
+            return primes;
         }
 
-        public static List<int> ToIntList(int max)
+        public static T UpTo<T>(int max) where T : ICollection<int>, new()
         {
             var compositness = Compositness(max);
-            var Primes = new List<int> { 2 };
-            for (int i = 3; i < max; i += 2)
+            var primes = new T { 2 };
+            for (int i = 3; i < compositness.Length; i += 2)
             {
-                if (!compositness[i]) Primes.Add(i);
+                if (!compositness[i]) primes.Add(i);
             }
-            return Primes;
-        }
-
-        public static HashSet<long> ToLongHash(long max)
-        {
-            var compositness = Compositness(max);
-            var Primes = new HashSet<long> { 2L };
-            for (long i = 3L; i < max; i += 2)
-            {
-                if (!compositness[i]) Primes.Add(i);
-            }
-            return Primes;
-        }
-
-        public static HashSet<int> ToIntHash(int max)
-        {
-            var compositness = Compositness(max);
-            var Primes = new HashSet<int> { 2 };
-            for (int i = 3; i < max; i += 2)
-            {
-                if (!compositness[i]) Primes.Add(i);
-            }
-            return Primes;
-        }
-
-        public static SortedSet<long> ToLongSortedSet(long max)
-        {
-            var compositness = Compositness(max);
-            var Primes = new SortedSet<long> { 2L };
-            for (long i = 3L; i < max; i += 2)
-            {
-                if (!compositness[i]) Primes.Add(i);
-            }
-            return Primes;
-        }
-
-        public static SortedSet<int> ToIntSortedSet(int max)
-        {
-            var compositness = Compositness(max);
-            var Primes = new SortedSet<int> { 2 };
-            for (int i = 3; i < max; i += 2)
-            {
-                if (!compositness[i]) Primes.Add(i);
-            }
-            return Primes;
+            return primes;
         }
     }
 }

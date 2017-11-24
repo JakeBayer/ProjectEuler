@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\NumberExtenstions.cs" />
     <Compile Include="IProblem.cs" />
     <Compile Include="Problems\1-50\11-20\Problem18\Problem18.cs" />
     <Compile Include="Problems\1-50\11-20\Problem13\Problem13.cs" />
@@ -69,6 +70,8 @@
     <Compile Include="Problems\1-50\41-50\Problem47\Problem47.cs" />
     <Compile Include="Problems\1-50\41-50\Problem48\Problem48.cs" />
     <Compile Include="Problems\1-50\41-50\Problem49\Problem49.cs" />
+    <Compile Include="Problems\1-50\41-50\Problem50\Problem50.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem51.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Factorization.cs" />
@@ -104,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Problems\1-50\1-10\" />
-    <Folder Include="Problems\51-100\51-60\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

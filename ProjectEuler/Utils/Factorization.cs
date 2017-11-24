@@ -10,14 +10,9 @@ namespace ProjectEuler.Utils
     {
         private static SortedSet<long> primes;
 
-        //static Factorization()
-        //{
-        //    primes = Primes.ToLongSortedSet(long.MaxValue);
-        //}
-
         public static void InitializePrimes(long max)
         {
-            primes = Primes.ToLongSortedSet((long)Math.Sqrt(max) + 1);
+            primes = Primes.UpTo<SortedSet<long>>((long)Math.Sqrt(max) + 1);
         }
 
         public static PrimeFactorization Factorize(this long number)

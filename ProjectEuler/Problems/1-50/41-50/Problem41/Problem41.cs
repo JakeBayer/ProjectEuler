@@ -12,7 +12,7 @@ namespace ProjectEuler.Problems
         private const long MAX = 7654321; // pandigitals of length 9 and 8 are always divisible by 3
         public string Run()
         {
-            var primes = Primes.ToLongList(MAX);
+            var primes = Primes.UpTo<List<long>>(MAX);
             return primes.Last(p => Pandigital.Is(p, p.ToString().Length)).ToString();
         }
     }
