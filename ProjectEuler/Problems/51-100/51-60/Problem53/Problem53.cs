@@ -19,8 +19,8 @@ namespace ProjectEuler.Problems
                 {
                     if (Combinatorics.Choose(n, r) > ONE_MILLION)
                     {
-                        ans += n - (2 * r) + 1;
-                        r = n;
+                        ans += n - (2 * r) + 1; // Choose is symmetric about r = n/2. if (nCr > 1000000, then so are all nCp for r <= p <= n-r
+                        break;
                     }
                 }
             }

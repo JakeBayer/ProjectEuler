@@ -42,6 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\Hand.cs" />
+    <Compile Include="Cards\ICardParser.cs" />
+    <Compile Include="Cards\Poker\HandRank.cs" />
+    <Compile Include="Cards\Poker\PokerHand.cs" />
+    <Compile Include="Cards\Rank.cs" />
+    <Compile Include="Cards\StandardParser.cs" />
+    <Compile Include="Cards\Suit.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\NumberExtenstions.cs" />
     <Compile Include="IProblem.cs" />
