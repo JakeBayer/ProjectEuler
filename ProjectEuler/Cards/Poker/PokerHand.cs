@@ -6,27 +6,25 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards.Poker
 {
-    public class PokerHand : Hand
+    public class PokerHand : Hand<PokerCard>
     {
-        public HandRank Rank { get; private set; }
+        public PokerHandRank Rank { get; private set; }
 
-        private List<Card> ActiveCards;
-        private List<Card> PassiveCards;
+        public IEnumerable<PokerCard> ActiveCards => Cards.Where(c => c.IsActiveInHand);
+        public IEnumerable<PokerCard> PassiveCards => Cards.Where(c => c.IsPassiveInHand);
 
-        public PokerHand(IEnumerable<Card> cards)
+        public PokerHand(IEnumerable<PokerCard> cards)
             : base(cards)
         {
-            ActiveCards = new List<Card>();
-            PassiveCards = new List<Card>();
             EvaluateHand();
         }
 
         private void EvaluateHand()
         {
-            throw new NotImplementedException();
+            Rank = PokerHandEvaluator.EvaluateHand(this);
         }
 
-        public override void AddCard(Card card)
+        public override void AddCard(PokerCard card)
         {
             base.AddCard(card);
             EvaluateHand();

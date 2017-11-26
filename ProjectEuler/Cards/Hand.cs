@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards
 {
-    public class Hand
+    public class Hand<T> where T : Card
     {
         public Hand() { }
-        public Hand(IEnumerable<Card> cards)
+        public Hand(IEnumerable<T> cards)
         {
-            Cards = new List<Card>(cards);
+            Cards = new List<T>(cards);
         }
-        List<Card> Cards { get; }
+        public List<T> Cards { get; }
 
-        public virtual void AddCard(Card card)
+        public virtual void AddCard(T card)
         {
             Cards.Add(card);
         }

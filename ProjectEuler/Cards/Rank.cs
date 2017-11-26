@@ -8,7 +8,6 @@ namespace ProjectEuler.Cards
 {
     public enum Rank
     {
-        Ace = 1,
         Two = 2,
         Three = 3,
         Four = 4,
@@ -21,5 +20,6 @@ namespace ProjectEuler.Cards
         Jack = 11,
         Queen = 12,
         King = 13,
+        Ace = 14,
     }
 }

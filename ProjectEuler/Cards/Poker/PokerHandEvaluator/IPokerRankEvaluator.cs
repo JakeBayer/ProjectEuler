@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.Cards
+namespace ProjectEuler.Cards.Poker
 {
-    public interface ICardParser
+    public interface IPokerRankEvaluator
     {
-        Card ParseCard(string card);
+        bool Evaluate(IEnumerable<PokerCard> cards);
     }
 }

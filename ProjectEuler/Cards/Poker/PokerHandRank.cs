@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards.Poker
 {
-    public enum HandRank
+    public enum PokerHandRank
     {
         HighCard = 1,
         Pair = 2,

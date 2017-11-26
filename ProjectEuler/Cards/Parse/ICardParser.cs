@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards
 {
-    public enum Suit
+    public interface ICardParser
     {
-        Clubs = 0,
-        Hearts = 1,
-        Spades = 2,
-        Diamonds = 3,
+        Card Parse(string card);
     }
 }

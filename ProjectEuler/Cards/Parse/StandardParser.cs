@@ -33,13 +33,13 @@ namespace ProjectEuler.Cards
             ['D'] = Suit.Diamonds,
         };
 
-        public Card ParseCard(string card)
+        public Card Parse(string card)
         {
             if (card.Length != 2)
             {
                 throw new ArgumentException("card type should be a 2 char string");
             }
-            return new Card(s_charToSuit[card[0]], s_charToCardRank[card[1]]);
+            return new Card(s_charToCardRank[card[0]], s_charToSuit[card[1]]);
         }
     }
 }

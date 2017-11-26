@@ -10,10 +10,16 @@ namespace ProjectEuler.Cards
     {
         public Suit Suit { get; }
         public Rank Rank { get; }
-        public Card(Suit suit, Rank rank)
+        public Card(Rank rank, Suit suit)
         {
             Suit = suit;
             Rank = rank;
+        }
+
+        public Card(Card other)
+        {
+            Suit = other.Suit;
+            Rank = other.Rank;
         }
 
         public static bool operator ==(Card left, Card right)
