@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards.Poker
 {
-    public class StraightFlushComparer : PokerRankComparerBase
+    public class StraightFlushComparer : StraightComparer
     {
-        protected override PokerHandRank rankToCompare => PokerHandRank.StraightFlush;
-
-        protected override int CompareValidated(PokerHand x, PokerHand y)
-        {
-            return x.ActiveCards.Max(c => (int)c.Rank).CompareTo(y.ActiveCards.Max(c => (int)c.Rank));
-        }
+        protected override PokerHandRank RankToCompare => PokerHandRank.StraightFlush;
     }
 }

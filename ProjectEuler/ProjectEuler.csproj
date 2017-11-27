@@ -46,10 +46,11 @@
     <Compile Include="Cards\Hand.cs" />
     <Compile Include="Cards\Parse\ICardParser.cs" />
     <Compile Include="Cards\Poker\PokerHand.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\FourOfAKindComparer.cs" />
     <Compile Include="Cards\Poker\PokerHandComparer\FullHouseComparer.cs" />
     <Compile Include="Cards\Poker\PokerHandComparer\IPokerRankComparer.cs" />
     <Compile Include="Cards\Poker\PokerHandComparer\PokerHandComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\StandardComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\StraightComparer.cs" />
     <Compile Include="Cards\Poker\PokerHandComparer\StraightFlushComparer.cs" />
     <Compile Include="Cards\Poker\PokerHandEvaluator\FlushEvlauator.cs" />
     <Compile Include="Cards\Poker\PokerHandEvaluator\FourOfAKindEvaluator.cs" />
@@ -132,6 +133,7 @@
     <Content Include="Problems\1-50\11-20\Problem13\Numbers.txt" />
     <Content Include="Problems\1-50\21-30\Problem22\Names.txt" />
     <Content Include="Problems\1-50\41-50\Problem42\words.txt" />
+    <Content Include="Problems\51-100\51-60\Problem54\poker.txt" />
     <Content Include="Problems\51-100\61-70\Problem67\values.txt" />
   </ItemGroup>
   <ItemGroup>

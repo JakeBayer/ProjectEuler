@@ -8,7 +8,7 @@ namespace ProjectEuler.Cards.Poker
 {
     public class FullHouseComparer : PokerRankComparerBase
     {
-        protected override PokerHandRank rankToCompare => PokerHandRank.FullHouse;
+        protected override PokerHandRank RankToCompare => PokerHandRank.FullHouse;
 
         protected override int CompareValidated(PokerHand x, PokerHand y)
         {
@@ -17,6 +17,15 @@ namespace ProjectEuler.Cards.Poker
 
             var yGroups = y.ActiveCards.GroupBy(g => g.Rank);
             var yTripletRank = (int)xGroups.Single(g => g.Count() == 3).First().Rank;
+            if (xTripletRank != yTripletRank)
+            {
+                return xTripletRank.CompareTo(yTripletRank);
+            }
+
+            var xPairRank = (int)xGroups.Single(g => g.Count() == 2).First().Rank;
+            var yPairRank = (int)yGroups.Single(g => g.Count() == 2).First().Rank;
+
+            return xPairRank.CompareTo(yPairRank);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace ProjectEuler.Cards.Poker
 
             var hasStraight = false;
             int run = 0, curr = 14;
-            while (!hasStraight && curr >= 0)
+            while (!hasStraight && curr > 0)
             {
                 curr--;
                 if (cardsInRank[curr].Any())

@@ -46,7 +46,7 @@ namespace ProjectEuler.Cards.Poker
             Dictionary<Suit, int> runsBySuit = new Dictionary<Suit, int>();
             int curr = 14;
             Suit flushedSuit = Suit.Clubs;
-            while (!hasStraightFlush && curr >= 0)
+            while (!hasStraightFlush && curr > 0)
             {
                 curr--;
                 foreach (var suit in groups.Select(g => g.Key))

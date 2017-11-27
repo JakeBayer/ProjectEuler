@@ -8,12 +8,12 @@ namespace ProjectEuler.Cards.Poker
 {
     public abstract class PokerRankComparerBase : IComparer<PokerHand>
     {
-        protected abstract PokerHandRank rankToCompare { get; }
+        protected abstract PokerHandRank RankToCompare { get; }
         public int Compare(PokerHand x, PokerHand y)
         {
-            if (x.Rank != rankToCompare || y.Rank != rankToCompare)
+            if (x.Rank != RankToCompare || y.Rank != RankToCompare)
             {
-                throw new InvalidOperationException($"One of these hands is not of the correct rank. I can only compare two {rankToCompare}")
+                throw new InvalidOperationException($"One of these hands is not of the correct rank. I can only compare two {RankToCompare}");
             }
             return CompareValidated(x, y);
         }
