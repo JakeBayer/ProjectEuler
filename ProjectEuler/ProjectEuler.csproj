@@ -42,6 +42,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\Hand.cs" />
+    <Compile Include="Cards\Parse\ICardParser.cs" />
+    <Compile Include="Cards\Poker\PokerHand.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\FullHouseComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\IPokerRankComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\PokerHandComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\StandardComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\StraightComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandComparer\StraightFlushComparer.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\FlushEvlauator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\FourOfAKindEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\FullHouseEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\HighCardEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerCard.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\IPokerRankEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\PairEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\PokerHandEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\StraightEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\StraightFlushEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\ThreeOfAKindEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandEvaluator\TwoPairEvaluator.cs" />
+    <Compile Include="Cards\Poker\PokerHandRank.cs" />
+    <Compile Include="Cards\Rank.cs" />
+    <Compile Include="Cards\Parse\StandardParser.cs" />
+    <Compile Include="Cards\Suit.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\NumberExtenstions.cs" />
     <Compile Include="IProblem.cs" />
@@ -74,6 +100,7 @@
     <Compile Include="Problems\51-100\51-60\Problem51\Problem51.cs" />
     <Compile Include="Problems\51-100\51-60\Problem52\Problem52.cs" />
     <Compile Include="Problems\51-100\51-60\Problem53\Problem53.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem54\Problem54.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Combinatorics.cs" />
@@ -106,6 +133,7 @@
     <Content Include="Problems\1-50\11-20\Problem13\Numbers.txt" />
     <Content Include="Problems\1-50\21-30\Problem22\Names.txt" />
     <Content Include="Problems\1-50\41-50\Problem42\words.txt" />
+    <Content Include="Problems\51-100\51-60\Problem54\poker.txt" />
     <Content Include="Problems\51-100\61-70\Problem67\values.txt" />
   </ItemGroup>
   <ItemGroup>
