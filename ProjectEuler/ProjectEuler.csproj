@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,7 +102,13 @@
     <Compile Include="Problems\51-100\51-60\Problem52\Problem52.cs" />
     <Compile Include="Problems\51-100\51-60\Problem53\Problem53.cs" />
     <Compile Include="Problems\51-100\51-60\Problem54\Problem54.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem55\Problem55.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem56\Problem56.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem57\Problem57.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem58\Problem58.cs" />
+    <Compile Include="Problems\51-100\51-60\Problem59\Problem59.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
+    <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Combinatorics.cs" />
     <Compile Include="Utils\Factorization.cs" />
@@ -124,6 +131,7 @@
     <Compile Include="Utils\Coins.cs" />
     <Compile Include="Utils\Primes.cs" />
     <Compile Include="Utils\GeometricNumbers\Triangular.cs" />
+    <Compile Include="Words\EnglishDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -134,7 +142,9 @@
     <Content Include="Problems\1-50\21-30\Problem22\Names.txt" />
     <Content Include="Problems\1-50\41-50\Problem42\words.txt" />
     <Content Include="Problems\51-100\51-60\Problem54\poker.txt" />
+    <Content Include="Problems\51-100\51-60\Problem59\cipher.txt" />
     <Content Include="Problems\51-100\61-70\Problem67\values.txt" />
+    <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Problems\1-50\1-10\" />

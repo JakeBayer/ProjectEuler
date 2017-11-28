@@ -50,5 +50,45 @@ namespace ProjectEuler.Utils
             }
             return primes;
         }
+
+        public class InitializedPrimes
+        {
+            private static List<long> _primes;
+            public InitializedPrimes(long max)
+            {
+                _primes = Primes.UpTo<List<long>>(max);
+            }
+
+            public bool IsPrime(long n)
+            {
+                var sqrt = Math.Sqrt(n);
+                if (_primes[_primes.Count - 1] < (long)sqrt)
+                {
+                    _primes = Primes.UpTo<List<long>>((long)sqrt + 1);
+                }
+                return !(n < 2) && (n == 2 || IsPrime(n, 1, sqrt));
+            }
+
+            private bool IsPrime(long n, int idx, double sqrt)
+            {
+                long d = _primes[idx];
+                return !(n % d == 0) && (d > sqrt || IsPrime(n, ++idx, sqrt));
+            }
+        }
+
+        public static InitializedPrimes Initialize(long upTo)
+        {
+            return new InitializedPrimes(upTo);
+        }
+
+        public static bool IsPrime(long n)
+        {
+            return !(n < 2) && (n == 2 || IsPrime(n, 3, Math.Sqrt(n)));
+        }
+
+        private static bool IsPrime(long n, long d, double sqrt)
+        {
+            return !(n % d == 0) && (d > sqrt || IsPrime(n, d + 2, sqrt));
+        }
     }
 }

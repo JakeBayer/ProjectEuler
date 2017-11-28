@@ -30,6 +30,11 @@ namespace ProjectEuler.Types
             Digits = new List<int>(seed.Digits);
         }
 
+        public static Huge operator+ (Huge a, Huge b)
+        {
+            return a.Add(b);
+        }
+
         public Huge Add(Huge addend)
         {
             for (int i = 0; i < addend.Digits.Count; i++)
