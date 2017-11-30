@@ -16,13 +16,13 @@ namespace ProjectEuler.Utils
             {
                 compositness[i] = true;
             }
-            for (long i = 3; i < (long)Math.Sqrt(max + 1); i += 2)
+            for (long i = 3; i < (long)Math.Sqrt(max) + 1; i += 2)
             {
                 if (!compositness[i])
                 {
-                    for (long j = 2; j <= (max + 1) / i - 1; j++)
+                    for (long j = i*2; j <= max; j += i)
                     {
-                        compositness[i * j] = true;
+                        compositness[j] = true;
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace ProjectEuler.Utils
                 var sqrt = Math.Sqrt(n);
                 if (_primes[_primes.Count - 1] < (long)sqrt)
                 {
-                    _primes = Primes.UpTo<List<long>>((long)sqrt + 1);
+                    _primes = Primes.UpTo<List<long>>((long)sqrt * 2);
                 }
                 return !(n < 2) && (n == 2 || IsPrime(n, 1, sqrt));
             }
