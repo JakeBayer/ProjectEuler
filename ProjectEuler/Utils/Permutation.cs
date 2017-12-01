@@ -100,13 +100,13 @@ namespace ProjectEuler.Utils
         public static IEnumerable<List<T>> Cycles<T>(IEnumerable<T> seed)
         {
             T top;
-            var set = new List<T>(seed);
+            var set = new LinkedList<T>(seed);
             for (int i = 0; i < set.Count; i++)
             {
                 yield return new List<T>(set);
-                top = set[0];
-                set.RemoveAt(0);
-                set.Add(top);
+                top = set.First();
+                set.RemoveFirst();
+                set.AddLast(top);
             }
         }
 

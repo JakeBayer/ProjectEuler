@@ -14,7 +14,7 @@ namespace ProjectEuler.Utils
 
         protected override long ExplicitFormula(long n)
         {
-            throw new NotImplementedException();
+            return n * ((baseVal - 2) * n - (baseVal - 4))/2;
         }
     }
 
@@ -28,22 +28,22 @@ namespace ProjectEuler.Utils
             return (baseVal - 1) * n - (baseVal - 2);
         }
 
-        private static GeometricNumberGenerator _generator;
+        private GeometricNumberGenerator _generator;
 
         public GeometricNumberBase()
         {
             _generator = new GeometricNumberGenerator(ImplicitDifferenceFunction, ExplicitFormula);
         }
 
-        public static bool Is(int n) => Is(Convert.ToInt64(n));
+        public bool Is(int n) => Is(Convert.ToInt64(n));
 
-        public static bool Is(long n) => _generator.Is(n);
+        public bool Is(long n) => _generator.Is(n);
 
         public HashSet<long> Numbers => _generator._numbers;
 
         public HashSet<long> GenerateUpTo(long n) => _generator.GenerateUpTo(n);
 
-        public static long Explicit(long n)
+        public long Explicit(long n)
         {
             return _generator.Explicit(n);
         }

@@ -10,6 +10,7 @@ namespace ProjectEuler.Problems
 {
     public class Problem42 : IProblem
     {
+        private Triangular Triangular = new Triangular();
         public string Run()
         {
             StreamReader reader = new StreamReader(@"~\..\..\..\Problems\1-50\41-50\Problem42\words.txt");

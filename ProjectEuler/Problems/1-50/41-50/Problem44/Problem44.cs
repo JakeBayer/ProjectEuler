@@ -9,6 +9,7 @@ namespace ProjectEuler.Problems
 {
     public class Problem44 : IProblem
     {
+        private Pentagonal Pentagonal = new Pentagonal();
         private List<long> pentagonals = new List<long> { 1 };
         private long current = 1;
         private long min = long.MaxValue;

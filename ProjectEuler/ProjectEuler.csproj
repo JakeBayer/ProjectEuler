@@ -113,6 +113,7 @@
     <Compile Include="Problems\51-100\51-60\Problem58\Problem58.cs" />
     <Compile Include="Problems\51-100\51-60\Problem59\Problem59.cs" />
     <Compile Include="Problems\51-100\51-60\Problem60\Problem60.cs" />
+    <Compile Include="Problems\51-100\61-70\Problem61\Problem61.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Utils\Factorization.cs" />
     <Compile Include="Utils\GeometricNumbers\GeometricNumbers.cs" />
     <Compile Include="Utils\GeometricNumbers\Hexagonal.cs" />
+    <Compile Include="Utils\GeometricNumbers\Squares.cs" />
     <Compile Include="Utils\Palindrome.cs" />
     <Compile Include="Utils\Pandigital.cs" />
     <Compile Include="Utils\GeometricNumbers\Pentagonal.cs" />

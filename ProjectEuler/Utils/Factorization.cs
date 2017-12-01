@@ -39,9 +39,9 @@ namespace ProjectEuler.Utils
             long num = number;
             foreach (var prime in primes)
             {
-                if (num%prime != 0) continue;
+                if (num % prime != 0) continue;
                 int ex = 0;
-                while (num%prime == 0)
+                while (num % prime == 0)
                 {
                     num /= prime;
                     ex++;

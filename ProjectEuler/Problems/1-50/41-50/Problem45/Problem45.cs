@@ -9,6 +9,8 @@ namespace ProjectEuler.Problems
 {
     public class Problem45 : IProblem
     {
+        private Hexagonal Hexagonal = new Hexagonal();
+        private Pentagonal Pentagonal = new Pentagonal();
         public string Run()
         {
             long n = 144, hex_n = 0;
