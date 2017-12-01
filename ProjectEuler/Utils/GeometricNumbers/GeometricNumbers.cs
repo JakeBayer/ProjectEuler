@@ -25,7 +25,7 @@ namespace ProjectEuler.Utils
 
         protected virtual long ImplicitDifferenceFunction(long n)
         {
-            return (baseVal - 1) * n - (baseVal - 2);
+            return (baseVal - 2) * n - (baseVal - 3);
         }
 
         private GeometricNumberGenerator _generator;
@@ -42,6 +42,8 @@ namespace ProjectEuler.Utils
         public HashSet<long> Numbers => _generator._numbers;
 
         public HashSet<long> GenerateUpTo(long n) => _generator.GenerateUpTo(n);
+
+        public HashSet<long> GenerateWhileLessThan(long n) => _generator.GenerateWhileLessThan(n);
 
         public long Explicit(long n)
         {
@@ -64,6 +66,17 @@ namespace ProjectEuler.Utils
             public HashSet<long> GenerateUpTo(long n)
             {
                 while (_curr <= n)
+                {
+                    _curr++;
+                    _max += _diffGenerator(_curr);
+                    _numbers.Add(_max);
+                }
+                return _numbers;
+            }
+
+            public HashSet<long> GenerateWhileLessThan(long n)
+            {
+                while (_max < n)
                 {
                     _curr++;
                     _max += _diffGenerator(_curr);

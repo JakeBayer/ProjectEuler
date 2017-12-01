@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Utils
 {
-    public class Squares : GeometricNumberBase
+    public class Square : GeometricNumberBase
     {
-        static Squares() { }
+        static Square() { }
 
         protected override int baseVal => 4;
 

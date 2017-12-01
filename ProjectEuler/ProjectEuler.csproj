@@ -121,7 +121,7 @@
     <Compile Include="Utils\Factorization.cs" />
     <Compile Include="Utils\GeometricNumbers\GeometricNumbers.cs" />
     <Compile Include="Utils\GeometricNumbers\Hexagonal.cs" />
-    <Compile Include="Utils\GeometricNumbers\Squares.cs" />
+    <Compile Include="Utils\GeometricNumbers\Square.cs" />
     <Compile Include="Utils\Palindrome.cs" />
     <Compile Include="Utils\Pandigital.cs" />
     <Compile Include="Utils\GeometricNumbers\Pentagonal.cs" />
