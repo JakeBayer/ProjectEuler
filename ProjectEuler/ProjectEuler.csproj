@@ -114,6 +114,7 @@
     <Compile Include="Problems\51-100\51-60\Problem59\Problem59.cs" />
     <Compile Include="Problems\51-100\51-60\Problem60\Problem60.cs" />
     <Compile Include="Problems\51-100\61-70\Problem61\Problem61.cs" />
+    <Compile Include="Problems\51-100\61-70\Problem62\Problem62.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
