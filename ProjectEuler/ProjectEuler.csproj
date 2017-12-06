@@ -116,10 +116,15 @@
     <Compile Include="Problems\51-100\61-70\Problem61\Problem61.cs" />
     <Compile Include="Problems\51-100\61-70\Problem62\Problem62.cs" />
     <Compile Include="Problems\51-100\61-70\Problem63\Problem63.cs" />
+    <Compile Include="Problems\51-100\61-70\Problem64\Problem64.cs" />
+    <Compile Include="Problems\51-100\61-70\Problem65\Problem65.cs" />
+    <Compile Include="Problems\51-100\61-70\Problem66\Problem66.cs" />
     <Compile Include="Problems\51-100\61-70\Problem67\Problem67.cs" />
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\Combinatorics.cs" />
+    <Compile Include="Utils\EuclideanAlgorithm\ExtendedEuclideanSolution.cs" />
+    <Compile Include="Utils\EuclideanAlgorithm\Modular.cs" />
     <Compile Include="Utils\Factorization.cs" />
     <Compile Include="Utils\GeometricNumbers\GeometricNumbers.cs" />
     <Compile Include="Utils\GeometricNumbers\Hexagonal.cs" />
