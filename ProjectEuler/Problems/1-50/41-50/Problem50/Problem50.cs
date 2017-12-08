@@ -12,8 +12,8 @@ namespace ProjectEuler.Problems
         private const long MAX = 1000000;
         public string Run()
         {
-            var primes = Primes.UpTo<List<long>>(MAX);
-            var primesSet = Primes.UpTo<HashSet<long>>(MAX);
+            var primes = Prime.Sieve.UpTo<List<long>>(MAX);
+            var primesSet = Prime.Sieve.UpTo<HashSet<long>>(MAX);
 
             long max = 0, length = 0;
 

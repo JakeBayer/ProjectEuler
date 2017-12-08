@@ -12,7 +12,7 @@ namespace ProjectEuler.Problems
         private const long UP_TO = 1000000;
         public string Run()
         {
-            var primes = Primes.UpTo<HashSet<long>>(UP_TO);
+            var primes = Prime.Sieve.UpTo<HashSet<long>>(UP_TO);
 
             HashSet<int> ans = new HashSet<int>(new[] { 2 });
             //List<int> ans = new List<int> { 2 }; // Initialize list with 2 to save small amount of time

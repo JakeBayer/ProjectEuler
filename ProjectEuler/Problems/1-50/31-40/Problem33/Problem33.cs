@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,13 +53,8 @@ namespace ProjectEuler.Problems
             var num = ans.Aggregate(1, (acc, f) => acc * int.Parse(f.Numerator));
             var den = ans.Aggregate(1, (acc, f) => acc * int.Parse(f.Denominator));
 
-            den /= GCD(num, den);
+            den /= num.GCD(den);
             return den.ToString();
-        }
-
-        private int GCD(int a, int b)
-        {
-            return b == 0 ? a : GCD(b, a % b);
         }
 
         private string Pad(string s)

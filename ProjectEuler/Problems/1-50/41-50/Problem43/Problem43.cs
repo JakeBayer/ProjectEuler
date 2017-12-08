@@ -9,7 +9,7 @@ namespace ProjectEuler.Problems
 {
     public class Problem43 : IProblem
     {
-        private List<int> _primes = Primes.UpTo<List<int>>(18);
+        private List<int> _primes = Prime.Sieve.UpTo<List<int>>(18);
         public string Run()
         {
             var allPandigitals = Permutation.AllPermutations(Enumerable.Range(0, 10));

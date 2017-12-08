@@ -12,7 +12,7 @@ namespace ProjectEuler.Utils
 
         public static void InitializePrimes(long max)
         {
-            primes = Primes.UpTo<SortedSet<long>>((long)Math.Sqrt(max) + 1);
+            primes = Prime.Sieve.UpTo<SortedSet<long>>((long)Math.Sqrt(max) + 1);
         }
 
         public static PrimeFactorization Factorize(this long number)

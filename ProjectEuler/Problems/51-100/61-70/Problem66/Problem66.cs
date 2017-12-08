@@ -12,7 +12,7 @@ namespace ProjectEuler.Problems
     // This equation and a method to solve has been known since 500AD, and can be found here:
     // https://en.wikipedia.org/wiki/Chakravala_method
     // However, other studies suggest a way to solve with iterated fractions. Given the previous two problems were 
-    // all about iterated fractions, I can't help but think that was the intended solution. Whatever, this runs sub 1s
+    // all about iterated fractions, I can't help but think that was the intended solution. Whatever, this runs < 1s
     // but yet it may be worth my time to revisit this with a strategy I actually came up with rather than copying
     // Bhaskara, who solved it without computers. Man I'm stupid.
     public class Problem66 : IProblem

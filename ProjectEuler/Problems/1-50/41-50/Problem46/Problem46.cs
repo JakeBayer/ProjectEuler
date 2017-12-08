@@ -10,7 +10,7 @@ namespace ProjectEuler.Problems
     public class Problem46 : IProblem
     {
         private const long MAX = 1000000;
-        private HashSet<long> primes = Primes.UpTo<HashSet<long>>(MAX);
+        private HashSet<long> primes = Prime.Sieve.UpTo<HashSet<long>>(MAX);
         private List<long> squares = new List<long>(Enumerable.Range(0, (int)Math.Sqrt(MAX)).Select(i => (long)i * (long)i));
         public string Run()
         {

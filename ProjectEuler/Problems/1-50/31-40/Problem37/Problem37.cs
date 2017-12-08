@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
     {
         public string Run()
         {
-            var primes = Primes.UpTo<HashSet<long>>(10000000L); // random guess of 10 million being sufficient, not worth my time to continuously generate exact amount
+            var primes = Prime.Sieve.UpTo<HashSet<long>>(10000000L); // random guess of 10 million being sufficient, not worth my time to continuously generate exact amount
 
             long i = 9;
             List<long> ans = new List<long>();

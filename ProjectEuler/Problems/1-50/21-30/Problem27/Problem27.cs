@@ -16,7 +16,7 @@ namespace ProjectEuler.Problems
 
         public string Run()
         {
-            var primes = Primes.UpTo<HashSet<long>>(1000000L);
+            var primes = Prime.Sieve.UpTo<HashSet<long>>(1000000L);
             long longest = 0, maxA = 0, maxB = 0;
             for (long b = 2; b <= 1000; b++)
             {

@@ -11,8 +11,8 @@ namespace ProjectEuler.Problems
     public class Problem60 : IProblem
     {
         private const long UpTo = 10000;
-        private Primes.InitializedPrimes _primeChecker = Primes.Initialize(UpTo);
-        private readonly SortedSet<long> _primes = Primes.UpTo<SortedSet<long>>(UpTo);
+        private Prime _primeChecker = new Prime(UpTo);
+        private readonly SortedSet<long> _primes = Prime.Sieve.UpTo<SortedSet<long>>(UpTo);
         private Graph<long> _primeGraph = new Graph<long>(new Dictionary<long, HashSet<long>>());
 
 
@@ -51,45 +51,6 @@ namespace ProjectEuler.Problems
                 }
             }
         }
-
-        //private void BuildPrimeAdjacencyGraph()
-        //{
-        //    foreach (var prime in _primes.Where(p => p > 10).Select(p => p.ToString()))
-        //    {
-        //        for (int i = 1; i < prime.Length; i++)
-        //        {
-        //            CheckAndAddPair(prime, i);
-        //        }
-        //    }
-        //}
-
-        //private void CheckAndAddPair(string prime, int i)
-        //{
-        //    var string1 = prime.Substring(0, i);
-        //    var string2 = prime.Substring(i, prime.Length - i);
-        //    if (string2[0] == '0') return;
-        //    var prime1 = long.Parse(string1);
-        //    var prime2 = long.Parse(string2);
-        //    if (prime1 != prime2 && _primes.Contains(prime1) && _primes.Contains(prime2) && _primes.Contains(long.Parse(string2 + string1)))
-        //    {
-        //        if (!_primeGraph.Neighbors.ContainsKey(prime1))
-        //        {
-        //            _primeGraph.Neighbors.Add(prime1, new HashSet<long>());
-        //        }
-        //        if (!_primeGraph.Neighbors.ContainsKey(prime2))
-        //        {
-        //            _primeGraph.Neighbors.Add(prime2, new HashSet<long>());
-        //        }
-        //        if (!_primeGraph.Neighbors[prime1].Contains(prime2))
-        //        {
-        //            _primeGraph.Neighbors[prime1].Add(prime2);
-        //        }
-        //        if (!_primeGraph.Neighbors[prime2].Contains(prime2))
-        //        {
-        //            _primeGraph.Neighbors[prime2].Add(prime1);
-        //        }
-        //    }
-        //}
 
         private List<HashSet<long>> _cliques = new List<HashSet<long>>();
 

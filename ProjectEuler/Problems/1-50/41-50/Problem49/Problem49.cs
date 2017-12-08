@@ -13,7 +13,7 @@ namespace ProjectEuler.Problems
         public string Run()
         {
             var ans = new List<int>();
-            var primes = Primes.UpTo<SortedSet<int>>(10000).SkipWhile(x => x < 1000);
+            var primes = Prime.Sieve.UpTo<SortedSet<int>>(10000).SkipWhile(x => x < 1000);
 
             foreach (var prime in primes)
             {

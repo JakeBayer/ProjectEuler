@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjectEuler.Utils.Primes;
 
 namespace ProjectEuler.Problems
 {
     public class Problem58 : IProblem
     {
         private const long TEN_THOUSAND = 100000L;
-        private InitializedPrimes primeChecker = Primes.Initialize(TEN_THOUSAND);
+        private Prime primeChecker = new Prime(TEN_THOUSAND);
         private long numDiagonals = 0;
         private long numPrimeDiagonals = 0;
 

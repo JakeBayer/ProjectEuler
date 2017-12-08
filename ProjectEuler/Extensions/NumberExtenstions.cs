@@ -17,5 +17,15 @@ namespace ProjectEuler.Extensions
         {
             return number.ToString().ToCharArray().Select(c => c - '0');
         }
+
+        public static int GCD(this int a, int b)
+        {
+            return b == 0 ? a : GCD(b, a % b);
+        }
+
+        public static long GCD(this long a, long b)
+        {
+            return b == 0 ? a : GCD(b, a % b);
+        }
     }
 }
