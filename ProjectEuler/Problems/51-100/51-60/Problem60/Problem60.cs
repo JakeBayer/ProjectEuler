@@ -11,10 +11,13 @@ namespace ProjectEuler.Problems
     public class Problem60 : IProblem
     {
         private const long UpTo = 10000;
-        private Prime _primeChecker = new Prime(UpTo);
         private readonly SortedSet<long> _primes = Prime.Sieve.UpTo<SortedSet<long>>(UpTo);
         private Graph<long> _primeGraph = new Graph<long>(new Dictionary<long, HashSet<long>>());
 
+        public Problem60()
+        {
+            Prime.Initialize(UpTo);
+        }
 
         private void BuildPrimeAdjacencyGraph()
         {
@@ -31,7 +34,7 @@ namespace ProjectEuler.Problems
         {
             var p1_str = prime1.ToString();
             var p2_str = prime2.ToString();
-            if (_primeChecker.IsPrime(long.Parse(p1_str + p2_str)) && _primeChecker.IsPrime(long.Parse(p2_str + p1_str)))
+            if (Prime.IsPrime(long.Parse(p1_str + p2_str)) && Prime.IsPrime(long.Parse(p2_str + p1_str)))
             {
                 if (!_primeGraph.Neighbors.ContainsKey(prime1))
                 {

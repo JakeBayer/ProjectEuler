@@ -10,16 +10,20 @@ namespace ProjectEuler.Problems
     public class Problem58 : IProblem
     {
         private const long TEN_THOUSAND = 100000L;
-        private Prime primeChecker = new Prime(TEN_THOUSAND);
         private long numDiagonals = 0;
         private long numPrimeDiagonals = 0;
+
+        public Problem58()
+        {
+            Prime.Initialize(TEN_THOUSAND);
+        }
 
         private long GenerateSpiralLayerAndReturnLastCorner(long lastCorner, long spiralSize)
         {
             for (int i = 0; i < 4; i++)
             {
                 lastCorner += spiralSize - 1;
-                if (primeChecker.IsPrime(lastCorner))
+                if (Prime.IsPrime(lastCorner))
                 {
                     numPrimeDiagonals++;
                 }

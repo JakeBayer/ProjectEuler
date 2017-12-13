@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,16 @@ namespace ProjectEuler.Extensions
         public static long GCD(this long a, long b)
         {
             return b == 0 ? a : GCD(b, a % b);
+        }
+
+        public static Prime.Factorization Factorize(this long number)
+        {
+            return Prime.Factorization.Of(number);
+        }
+
+        public static Dictionary<long, Prime.Factorization> Factorize(this IEnumerable<long> numbers)
+        {
+            return Prime.Factorization.Of(numbers);
         }
     }
 }
