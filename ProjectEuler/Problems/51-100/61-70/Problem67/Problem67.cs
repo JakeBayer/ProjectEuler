@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace ProjectEuler.Problems
 
         private List<List<long>> ReadValues()
         {
-            StreamReader reader = new StreamReader(@"~\..\..\..\Problems\51-100\61-70\Problem67\values.txt");
+            StreamReader reader = FileHelper.ForProblem(67).OpenFile("values.txt");
             var values = new List<List<long>>();
             while (!reader.EndOfStream)
             {

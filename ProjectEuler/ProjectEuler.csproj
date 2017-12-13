@@ -129,10 +129,12 @@
     <Compile Include="Problems\51-100\71-80\Problem75\Problem75.cs" />
     <Compile Include="Problems\51-100\71-80\Problem76\Problem76.cs" />
     <Compile Include="Problems\51-100\71-80\Problem78\Problem78.cs" />
+    <Compile Include="Problems\51-100\71-80\Problem79\Problem79.cs" />
     <Compile Include="Problems\51-100\91-100\Problem94\Problem94.cs" />
     <Compile Include="Problems\51-100\91-100\Problem95\Problem95.cs" />
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
+    <Compile Include="Utils\FileHelper.cs" />
     <Compile Include="Utils\NumberTheory\Combinatorics.cs" />
     <Compile Include="Utils\EuclideanAlgorithm\ExtendedEuclideanSolution.cs" />
     <Compile Include="Utils\EuclideanAlgorithm\Modular.cs" />
@@ -171,6 +173,7 @@
     <Content Include="Problems\51-100\51-60\Problem54\poker.txt" />
     <Content Include="Problems\51-100\51-60\Problem59\cipher.txt" />
     <Content Include="Problems\51-100\61-70\Problem67\values.txt" />
+    <Content Include="Problems\51-100\71-80\Problem79\passcode.txt" />
     <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
