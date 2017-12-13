@@ -10,7 +10,7 @@ namespace ProjectEuler.Utils
     {
         private static List<long[]> _memo = new List<long[]> { new long[1] { 1 } };
 
-        public static long Choose(int n, int r)
+        public static long Choose(this int n, int r)
         {
             if (n < 0 || r < 0 || r > n)
             {

@@ -1,39 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler.Utils
 {
-    public class Prime
+    public static class Prime
     {
-        private List<long> _primes = new List<long>();
+        private static List<long> _primes = new List<long>();
+        private static long _max;
+        private static object _mutex = new object();
 
-        public Prime() { }
-
-        public Prime(long max)
-        {
-            Initialize(max);
-        }
-
-        public Prime Initialize(long max)
+        public static void Initialize(long max)
         {
             _primes = Sieve.UpTo<List<long>>(max);
-            return this;
+            _max = max;
         }
 
-        public bool IsPrime(long n)
+        public static bool IsPrime(long n)
         {
+            if (n < _max)
+            {
+                return _primes.BinarySearch(n) > 0;
+            }
             var sqrt = Math.Sqrt(n);
-            if (_primes.Count == 0 || _primes[_primes.Count - 1] < (long)sqrt)
+            if (_primes.Count == 0 || _max * _max < n)
             {
                 _primes = Sieve.UpTo<List<long>>((long)sqrt * 2);
             }
-            return !(n < 2) && (n == 2 || IsPrime(n, 1, sqrt));
+            return !(n < 2) && (n == 2 || IsPrimeHelper(n, 1, sqrt));
         }
 
-        private bool IsPrime(long n, int idx, double sqrt)
+        private static bool IsPrimeHelper(long n, int idx, double sqrt)
         {
             long d = _primes[idx];
-            return !(n % d == 0) && (d > sqrt || IsPrime(n, ++idx, sqrt));
+            return !(n % d == 0) && (d > sqrt || IsPrimeHelper(n, ++idx, sqrt));
         }
 
         public static bool ExhaustiveIsPrime(long n)
@@ -46,7 +46,7 @@ namespace ProjectEuler.Utils
             return !(n % d == 0) && (d > sqrt || ExhaustiveIsPrime(n, d + 2, sqrt));
         }
 
-        public List<long> Primes => _primes;
+        public static List<long> Primes => _primes;
 
         public class Sieve
         {
@@ -94,6 +94,66 @@ namespace ProjectEuler.Utils
                     if (!compositness[i]) primes.Add(i);
                 }
                 return primes;
+            }
+        }
+
+        public class Factorization : Dictionary<long, int>
+        {
+            public long SumOfFactors
+            {
+                get { return this.Aggregate<KeyValuePair<long, int>, long>(1, (current, primeFactor) => current * (((long)Math.Pow(primeFactor.Key, primeFactor.Value + 1) - 1) / (primeFactor.Key - 1))); }
+            }
+
+            public static Factorization Of(long number)
+            {
+                return Factorizer.Factorize(number);
+            }
+
+            public static Dictionary<long, Factorization> Of(IEnumerable<long> numbers)
+            {
+                return Factorizer.Factorize(numbers);
+            }
+        }
+
+        private class Factorizer
+        {
+            public static Factorization Factorize(long number)
+            {
+                if (_max * _max < number)
+                {
+                    Initialize((long)Math.Sqrt(number) + 1L);
+                }
+                return PrimeFactors(number);
+            }
+
+            public static Dictionary<long, Prime.Factorization> Factorize(IEnumerable<long> numbers)
+            {
+                var max = numbers.Max();
+                if (_max < max)
+                {
+                    Initialize((long)Math.Sqrt(max) + 1L);
+                }
+                return numbers.ToDictionary(x => x, PrimeFactors);
+            }
+
+            private static Factorization PrimeFactors(long number)
+            {
+                var factors = new Factorization();
+                long num = number;
+                foreach (var prime in _primes)
+                {
+                    if (num % prime != 0) continue;
+                    int ex = 0;
+                    while (num % prime == 0)
+                    {
+                        num /= prime;
+                        ex++;
+                    }
+                    factors.Add(prime, ex);
+                    if (num == 1) return factors;
+                }
+                factors.Add(num, 1);
+                return factors;
             }
         }
     }

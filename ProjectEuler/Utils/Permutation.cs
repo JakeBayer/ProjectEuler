@@ -115,5 +115,59 @@ namespace ProjectEuler.Utils
             var hashedSet = new HashSet<T>(set);
             return hashedSet.SetEquals(other);
         }
+
+        public static bool IsPermutationOf(this long a, long other)
+        {
+            int[] digits = new int[10];
+            while (a > 0)
+            {
+                digits[a % 10]++;
+                a /= 10;
+            }
+            while (other > 0)
+            {
+                var digit = other % 10;
+                if (digits[digit]-- == 0)
+                {
+                    return false;
+                }
+                other /= 10;
+            }
+            for (var i = 0; i < 10; i++)
+            {
+                if (digits[i] > 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool IsPermutationOf(this int a, int other)
+        {
+            int[] digits = new int[10];
+            while (a > 0)
+            {
+                digits[a % 10]++;
+                a /= 10;
+            }
+            while (other > 0)
+            {
+                var digit = other % 10;
+                if (digits[digit]-- == 0)
+                {
+                    return false;
+                }
+                other /= 10;
+            }
+            for (var i = 0; i < 10; i++)
+            {
+                if (digits[i] > 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     } 
 }

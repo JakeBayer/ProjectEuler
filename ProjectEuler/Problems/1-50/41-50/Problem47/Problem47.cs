@@ -11,8 +11,8 @@ namespace ProjectEuler.Problems
     {
         public string Run()
         {
-            var factorizations = Factorization.Factorize(Enumerable.Range(1, 10000000).Select(i => (long)i));
-            var facAsList = new PrimeFactorization[10000001];
+            var factorizations = Prime.Factorization.Of(Enumerable.Range(1, 10000000).Select(i => (long)i));
+            var facAsList = new Prime.Factorization[10000001];
             foreach(var fac in factorizations)
             {
                 facAsList[(int)fac.Key] = fac.Value;
