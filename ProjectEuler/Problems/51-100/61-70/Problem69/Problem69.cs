@@ -9,6 +9,7 @@ namespace ProjectEuler.Problems
 {
     public class Problem69 : IProblem
     {
+<<<<<<< HEAD
         private const int ONE_MILLION = 1000000;
         public string Run()
         {
@@ -25,6 +26,12 @@ namespace ProjectEuler.Problems
                 }
             }
             return idx.ToString();
+=======
+        public string Run()
+        {
+            
+            throw new NotImplementedException();
+>>>>>>> d17d4ff98df8148753a3c127bd90e06c56b9b243
         }
     }
 }

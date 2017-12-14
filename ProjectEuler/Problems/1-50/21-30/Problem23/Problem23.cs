@@ -18,7 +18,7 @@ namespace ProjectEuler.Problems
             {
                 nums[i] = i;
             }
-            var factorizations = nums.Skip(3).Factorize();
+            var factorizations = Prime.Factorization.Of(nums.Skip(3));
             var abundantNums = factorizations.Where(x => x.Value.SumOfFactors > 2 * x.Key).Select(x => x.Key);
 
             var abundantHash = new HashSet<long>(abundantNums);

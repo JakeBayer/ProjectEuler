@@ -9,13 +9,7 @@ namespace ProjectEuler.Utils
 {
     public class Totient
     {
-        private Prime _prime;
-        private bool _initialized = false;
-
-        public Totient()
-        {
-            _prime = new Prime();
-        }
+        public Totient() { }
         public Totient(long max)
         {
             Initialize(max);
@@ -23,17 +17,16 @@ namespace ProjectEuler.Utils
 
         public Totient Initialize(long max)
         {
-            _prime = new Prime(max);
-            _initialized = true;
+            Prime.Initialize(max);
             return this;
         }
 
         public long phi(long n)
         {
             var sqrt = Math.Sqrt(n);
-            if (_prime.Primes.Count == 0 || _prime.Primes[_prime.Primes.Count - 1] < (long)sqrt)
+            if (Prime.Primes.Count == 0 || Prime.Primes[Prime.Primes.Count - 1] < (long)sqrt)
             {
-                _prime.Initialize((long)sqrt * 2);
+                Prime.Initialize((long)sqrt * 2);
             }
             return phi_helper(n);
         }
@@ -45,7 +38,7 @@ namespace ProjectEuler.Utils
                 return 0;
 
             // Lehmer's conjecture
-            if (_prime.IsPrime(n))
+            if (Prime.IsPrime(n))
                 return n - 1;
 
             // Even number?
@@ -56,7 +49,7 @@ namespace ProjectEuler.Utils
             }
 
             // For all primes ...
-            foreach (var p in _prime.Primes)
+            foreach (var p in Prime.Primes)
             {
                 if (n % p != 0) continue;
 
