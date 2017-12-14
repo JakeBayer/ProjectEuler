@@ -12,11 +12,7 @@ namespace ProjectEuler.Problems
         public string Run()
         {
             var part = new Partition(Enumerable.Range(1, 100));
-            var partitionCounter = new Coins(Enumerable.Range(1, 100));
-            var c = part.Count(5);
-            var p = part.Count(100).ToString();
-            var t = partitionCounter.CountWays(100).ToString();
-            return p;
+            return (part.Count(100)-1).ToString();
         }
     }
 }
