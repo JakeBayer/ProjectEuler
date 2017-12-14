@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace ProjectEuler.Utils
         {
             _parts = partValues.OrderByDescending(i => i).ToArray();
             _numParts = _parts.Count();
+
             _memoizedCounts.Add(Enumerable.Repeat(1L, _numParts).ToArray());
         }
 
@@ -27,7 +29,6 @@ namespace ProjectEuler.Utils
             }
             return Count(n, 0);
         }
-
         private long Count(int n, int partIdx)
         {
             if (_memoizedCounts[n][partIdx] == -1)
