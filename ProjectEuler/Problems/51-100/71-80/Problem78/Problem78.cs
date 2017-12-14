@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-﻿using ProjectEuler.Utils;
+using ProjectEuler.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
->>>>>>> d17d4ff98df8148753a3c127bd90e06c56b9b243
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,23 +10,6 @@ namespace ProjectEuler.Problems
 {
     public class Problem78 : IProblem
     {
-<<<<<<< HEAD
-        private const int ONE_THOUSAND = 8000;
-        private const int ONE_MILLION = 1000000;
-        public string Run()
-        {
-            var part = new Partition(Enumerable.Range(1, ONE_THOUSAND));
-
-            BigInteger ways = 1;
-            var curr = 1;
-            while (ways % ONE_MILLION != 0)
-            {
-                curr++;
-                ways = part.Count(curr);
-            }
-            return curr.ToString();
-        }
-=======
         private const int ONE_MILLION = 1000000;
         private List<int> _partitionsModMillion = new List<int> { 1, 1 };
         private List<int> _generalizedPentagonals = new List<int> { 0 };
@@ -77,6 +54,5 @@ namespace ProjectEuler.Problems
         {
             return n % 2 == 0 ? -(n + 1) / 2 : (n + 1) / 2;
         }
->>>>>>> d17d4ff98df8148753a3c127bd90e06c56b9b243
     }
 }
