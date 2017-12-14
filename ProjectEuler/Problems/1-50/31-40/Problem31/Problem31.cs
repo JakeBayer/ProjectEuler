@@ -11,8 +11,8 @@ namespace ProjectEuler.Problems
     {
         public string Run()
         {
-            var coins = new Coins(new[] { 200, 100, 50, 20, 10, 5, 2, 1 });
-            return coins.CountWays(200).ToString();
+            var coins = new Partition(new[] { 200, 100, 50, 20, 10, 5, 2, 1 });
+            return coins.Count(200).ToString();
         }
     }
 }
