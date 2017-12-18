@@ -133,6 +133,8 @@
     <Compile Include="Problems\51-100\71-80\Problem77\Problem77.cs" />
     <Compile Include="Problems\51-100\71-80\Problem79\Problem79.cs" />
     <Compile Include="Problems\51-100\81-90\Problem81\Problem81.cs" />
+    <Compile Include="Problems\51-100\81-90\Problem82\Problem82.cs" />
+    <Compile Include="Problems\51-100\81-90\Problem83\Problem83.cs" />
     <Compile Include="Problems\51-100\91-100\Problem94\Problem94.cs" />
     <Compile Include="Problems\51-100\91-100\Problem95\Problem95.cs" />
     <Compile Include="Types\Fraction.cs" />
@@ -179,6 +181,10 @@
     <Content Include="Problems\51-100\61-70\Problem67\values.txt" />
     <Content Include="Problems\51-100\71-80\Problem79\passcode.txt" />
     <Content Include="Problems\51-100\81-90\Problem81\matrix.txt" />
+    <Content Include="Problems\51-100\81-90\Problem82\matrix.txt" />
+    <Content Include="Problems\51-100\81-90\Problem82\test_matrix.txt" />
+    <Content Include="Problems\51-100\81-90\Problem83\matrix.txt" />
+    <Content Include="Problems\51-100\81-90\Problem83\test_matrix.txt" />
     <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
