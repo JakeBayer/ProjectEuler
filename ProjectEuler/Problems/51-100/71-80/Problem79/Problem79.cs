@@ -28,13 +28,13 @@ namespace ProjectEuler.Problems
         public string Run()
         {
             var p = ReadValues();
-            DoSomething(new PasscodeState(new int[] { }, p));
+            FindPasscodeGreedy(new PasscodeState(new int[] { }, p));
 
 
             return _minPasscodes.First().ToString();
         }
 
-        private void DoSomething(PasscodeState passcode)
+        private void FindPasscodeGreedy(PasscodeState passcode)
         {
             if (passcode.Count >= _minLength) return;
             var nextDigits = passcode.GetOrderedNextDigits();
@@ -52,7 +52,7 @@ namespace ProjectEuler.Problems
                 }
                 else
                 {
-                    DoSomething(newPass);
+                    FindPasscodeGreedy(newPass);
                 }
             }
         }
