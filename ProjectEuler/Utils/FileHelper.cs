@@ -18,9 +18,18 @@ namespace ProjectEuler.Utils
             var nearestFifty = problem - (problem - 1) % 50;
             var nearestTen = problem - (problem - 1) % 10;
             return new FileHelperWithPath(@"~\..\..\..\Problems\"
-                + nearestFifty.ToString() + "-" + (nearestFifty + 49).ToString()
+                + Pad(nearestFifty.ToString(), 3) + "-" + Pad((nearestFifty + 49).ToString(), 3)
                 + @"\" + nearestTen.ToString() + "-" + (nearestTen + 9).ToString()
                 + @"\Problem" + problem.ToString() + @"\");
+        }
+
+        private static string Pad(string str, int len)
+        {
+            if (str.Length < len)
+            {
+                str = String.Join("", Enumerable.Repeat('0', len - str.Length)) + str;
+            }
+            return str;
         }
 
         public class FileHelperWithPath
