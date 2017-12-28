@@ -17,13 +17,13 @@ namespace ProjectEuler.Problems
         };
 
         private const int MAX_K = 12000;
-        private List<List<ProductSumExists>>[] ProductAndSumGridsByK = new List<List<ProductSumExists>>[MAX_K + 1];
+        private Dictionary<int, Dictionary<int, bool>>[] ProductAndSumGridsByK = new Dictionary<int, Dictionary<int, bool>>[MAX_K + 1];
         
         public Problem88()
         {
             for (int i = 0; i < ProductAndSumGridsByK.Count(); i++)
             {
-                ProductAndSumGridsByK[i] = new List<List<ProductSumExists>>();
+                ProductAndSumGridsByK[i] = new Dictionary<int, Dictionary<int, bool>>();
             }
         }
 
@@ -39,31 +39,28 @@ namespace ProjectEuler.Problems
             }
 
             var productSumGrid = ProductAndSumGridsByK[k];
-            while (productSumGrid.Count <= product)
+            if (!productSumGrid.ContainsKey(product))
             {
-                productSumGrid.Add(new List<ProductSumExists>());
+                productSumGrid.Add(product, new Dictionary<int, bool>());
             }
 
             var sumList = productSumGrid[product];
-            while (sumList.Count <= sum - k)
+            if (sumList.ContainsKey(sum))
             {
-                sumList.Add(ProductSumExists.Unknown);
+                return sumList[sum];
             }
-
-            if (sumList[sum - k] == ProductSumExists.True) return true;
-            if (sumList[sum - k] == ProductSumExists.False) return false;
 
             int a = 1;
             while (a <= k)
             {
                 if (product % a == 0 && ProductSumOfSizeKExists(k - 1, sum - a, product / a))
                 {
-                    sumList[sum - k] = ProductSumExists.True;
+                    sumList.Add(sum, true);
                     return true;
                 }
                 a++;
             }
-            sumList[sum - k] = ProductSumExists.False;
+            sumList.Add(sum, false);
             return false;
         }
 

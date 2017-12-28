@@ -141,6 +141,7 @@
     <Compile Include="Problems\51-100\91-100\Problem92\Problem92.cs" />
     <Compile Include="Problems\51-100\91-100\Problem94\Problem94.cs" />
     <Compile Include="Problems\51-100\91-100\Problem95\Problem95.cs" />
+    <Compile Include="Problems\51-100\91-100\Problem99\Problem99.cs" />
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\FileHelper.cs" />
@@ -189,6 +190,7 @@
     <Content Include="Problems\51-100\81-90\Problem82\test_matrix.txt" />
     <Content Include="Problems\51-100\81-90\Problem83\matrix.txt" />
     <Content Include="Problems\51-100\81-90\Problem83\test_matrix.txt" />
+    <Content Include="Problems\51-100\91-100\Problem99\base_exp.txt" />
     <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
