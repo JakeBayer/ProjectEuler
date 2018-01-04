@@ -37,6 +37,10 @@ namespace ProjectEuler.Problems
             {
                 return sum == product;
             }
+            if (sum - k + 1 == product)
+            {
+                return true;
+            }
 
             var productSumGrid = ProductAndSumGridsByK[k];
             if (!productSumGrid.ContainsKey(product))
@@ -50,7 +54,7 @@ namespace ProjectEuler.Problems
                 return sumList[sum];
             }
 
-            int a = 1;
+            int a = 2;
             while (a <= k)
             {
                 if (product % a == 0 && ProductSumOfSizeKExists(k - 1, sum - a, product / a))
