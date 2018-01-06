@@ -13,6 +13,10 @@ namespace ProjectEuler.Cards
         private readonly Random _rand = new Random();
         private LinkedList<T> _discardPile = new LinkedList<T>();
 
+        public Deck() : base() { }
+
+        public Deck(IEnumerable<T> cards) : base(cards) { }
+
         public bool IsEmpty()
         {
             return Count == 0;
@@ -34,9 +38,9 @@ namespace ProjectEuler.Cards
             }
         }
 
-        public Deck<T> Shuffle()
+        public void Shuffle()
         {
-            if (Count < 2) return this;
+            if (Count < 2) return;
             var result = new T[Count];
             int i = 0;
             foreach(var card in this)
@@ -53,14 +57,16 @@ namespace ProjectEuler.Cards
                 node.Value = result[i];
                 i++;
             }
-            return this;
         }
 
-        public Deck<T> Reshuffle()
+        public void Reshuffle()
         {
-            this.Concat(_discardPile);
+            foreach (var c in _discardPile)
+            {
+                AddLast(c);
+            }
             _discardPile.Clear();
-            return Shuffle();
+            Shuffle();
         }
     }
 }

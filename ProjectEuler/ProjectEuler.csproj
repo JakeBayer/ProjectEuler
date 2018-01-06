@@ -46,6 +46,9 @@
     <Compile Include="Cards\CardBase.cs" />
     <Compile Include="Cards\Deck.cs" />
     <Compile Include="Cards\Hand.cs" />
+    <Compile Include="Cards\Monopoly\ChanceDeck.cs" />
+    <Compile Include="Cards\Monopoly\CommunityChestDeck.cs" />
+    <Compile Include="Cards\Monopoly\MonopolyCard.cs" />
     <Compile Include="Cards\Parse\ICardParser.cs" />
     <Compile Include="Cards\PlayingCards\PlayingCard.cs" />
     <Compile Include="Cards\PlayingCards\Poker\PokerHand.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Problems\051-100\81-90\Problem81\Problem81.cs" />
     <Compile Include="Problems\051-100\81-90\Problem82\Problem82.cs" />
     <Compile Include="Problems\051-100\81-90\Problem83\Problem83.cs" />
+    <Compile Include="Problems\051-100\81-90\Problem84\Problem84.cs" />
     <Compile Include="Problems\051-100\81-90\Problem85\Problem85.cs" />
     <Compile Include="Problems\051-100\81-90\Problem87\Problem87.cs" />
     <Compile Include="Problems\051-100\81-90\Problem88\Problem88.cs" />
@@ -198,7 +202,6 @@
     <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cards\Monopoly\" />
     <Folder Include="Problems\001-050\1-10\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
