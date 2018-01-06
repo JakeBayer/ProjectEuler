@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards
 {
-    public class Hand<T> where T : Card
+    public class Hand<T> where T : CardBase
     {
         public Hand() { }
         public Hand(IEnumerable<T> cards)
@@ -19,6 +19,11 @@ namespace ProjectEuler.Cards
         public virtual void AddCard(T card)
         {
             Cards.Add(card);
+        }
+
+        public virtual bool RemoveCard(T card)
+        {
+            return Cards.Remove(card);
         }
     }
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards
 {
-    public interface ICardParser
+    public abstract class CardBase
     {
-        PlayingCard Parse(string card);
     }
 }

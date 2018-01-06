@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Cards
 {
-    public class Card : IEquatable<Card>
+    public class PlayingCard : CardBase, IEquatable<PlayingCard>
     {
         public Suit Suit { get; }
         public Rank Rank { get; }
-        public Card(Rank rank, Suit suit)
+        public PlayingCard(Rank rank, Suit suit)
         {
             Suit = suit;
             Rank = rank;
         }
 
-        public Card(Card other)
+        public PlayingCard(PlayingCard other)
         {
             Suit = other.Suit;
             Rank = other.Rank;
         }
 
-        public static bool operator ==(Card left, Card right)
+        public static bool operator ==(PlayingCard left, PlayingCard right)
         {
             // If both are null, or both are same instance, return true.
             if (ReferenceEquals(left, right))
@@ -40,12 +40,12 @@ namespace ProjectEuler.Cards
             return left.Equals(right);
         }
 
-        public static bool operator !=(Card left, Card right)
+        public static bool operator !=(PlayingCard left, PlayingCard right)
         {
             return !(left == right);
         }
 
-        public bool Equals(Card other)
+        public bool Equals(PlayingCard other)
         {
             if (other == null)
             {
@@ -57,7 +57,7 @@ namespace ProjectEuler.Cards
 
         public override bool Equals(object obj)
         {
-            return Equals(obj as Card);
+            return Equals(obj as PlayingCard);
         }
 
         public override int GetHashCode()

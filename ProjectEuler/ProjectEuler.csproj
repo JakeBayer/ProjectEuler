@@ -43,32 +43,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardBase.cs" />
+    <Compile Include="Cards\Deck.cs" />
     <Compile Include="Cards\Hand.cs" />
     <Compile Include="Cards\Parse\ICardParser.cs" />
-    <Compile Include="Cards\Poker\PokerHand.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\FullHouseComparer.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\IPokerRankComparer.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\PokerHandComparer.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\StandardComparer.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\StraightComparer.cs" />
-    <Compile Include="Cards\Poker\PokerHandComparer\StraightFlushComparer.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\FlushEvlauator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\FourOfAKindEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\FullHouseEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\HighCardEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerCard.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\IPokerRankEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\PairEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\PokerHandEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\StraightEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\StraightFlushEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\ThreeOfAKindEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandEvaluator\TwoPairEvaluator.cs" />
-    <Compile Include="Cards\Poker\PokerHandRank.cs" />
-    <Compile Include="Cards\Rank.cs" />
-    <Compile Include="Cards\Parse\StandardParser.cs" />
-    <Compile Include="Cards\Suit.cs" />
+    <Compile Include="Cards\PlayingCards\PlayingCard.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHand.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\FullHouseComparer.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\IPokerRankComparer.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\PokerHandComparer.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\StandardComparer.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\StraightComparer.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\StraightFlushComparer.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\FlushEvlauator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\FourOfAKindEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\FullHouseEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\HighCardEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerCard.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\IPokerRankEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\PairEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\PokerHandEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\StraightEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\StraightFlushEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\ThreeOfAKindEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\TwoPairEvaluator.cs" />
+    <Compile Include="Cards\PlayingCards\Poker\PokerHandRank.cs" />
+    <Compile Include="Cards\PlayingCards\Rank.cs" />
+    <Compile Include="Cards\PlayingCards\Parse\StandardParser.cs" />
+    <Compile Include="Cards\PlayingCards\Suit.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\NumberExtenstions.cs" />
     <Compile Include="Graph\Graph.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Problems\051-100\71-80\Problem78\Problem78.cs" />
     <Compile Include="Problems\051-100\71-80\Problem77\Problem77.cs" />
     <Compile Include="Problems\051-100\71-80\Problem79\Problem79.cs" />
+    <Compile Include="Problems\051-100\71-80\Problem80\Problem80.cs" />
     <Compile Include="Problems\051-100\81-90\Problem81\Problem81.cs" />
     <Compile Include="Problems\051-100\81-90\Problem82\Problem82.cs" />
     <Compile Include="Problems\051-100\81-90\Problem83\Problem83.cs" />
@@ -195,6 +198,7 @@
     <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Cards\Monopoly\" />
     <Folder Include="Problems\001-050\1-10\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
