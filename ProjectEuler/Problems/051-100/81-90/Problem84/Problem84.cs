@@ -33,13 +33,15 @@ namespace ProjectEuler.Problems
 
         private int[] RunMonopolyForNTurns(long n)
         {
+            _ccDeck.Shuffle();
+            _chanceDeck.Shuffle();
             Random die = new Random();
             int consecutiveDoubles = 0, currentPosition = 0;
             int[] positionOccurrences = new int[40];
             for (int i = 0; i < n; i++)
             {
-                int d1 = die.Next(1, 4);
-                int d2 = die.Next(1, 4);
+                int d1 = die.Next(1, 5);
+                int d2 = die.Next(1, 5);
                 if (d1 == d2)
                 {
                     consecutiveDoubles++;
@@ -77,7 +79,7 @@ namespace ProjectEuler.Problems
 
         private int Chance(int currentPosition)
         {
-            var card = _chanceDeck.Draw();
+            var card = _chanceDeck.DrawAndReturn();
             if (_chanceDeck.IsEmpty())
             {
                 _chanceDeck.Reshuffle();
@@ -87,7 +89,7 @@ namespace ProjectEuler.Problems
 
         private int CommunityChest(int currentPosition)
         {
-            var card = _ccDeck.Draw();
+            var card = _ccDeck.DrawAndReturn();
             if (_ccDeck.IsEmpty())
             {
                 _ccDeck.Reshuffle();

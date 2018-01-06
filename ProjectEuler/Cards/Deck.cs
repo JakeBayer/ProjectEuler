@@ -30,6 +30,14 @@ namespace ProjectEuler.Cards
             return top;
         }
 
+        public T DrawAndReturn()
+        {
+            var top = First;
+            RemoveFirst();
+            AddLast(top);
+            return top.Value;
+        }
+
         public IEnumerable<T> Draw(int num)
         {
             for (int i = 0; i < num; i++)
