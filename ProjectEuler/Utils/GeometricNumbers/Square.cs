@@ -14,6 +14,6 @@ namespace ProjectEuler.Utils
 
         protected override long ExplicitFormula(long n) => n * n;
 
-        protected override long ImplicitDifferenceFunction(long n) => 2 * n + 1;
+        protected override long ImplicitDifferenceFunction(long n) => 2 * n - 1;
     }
 }

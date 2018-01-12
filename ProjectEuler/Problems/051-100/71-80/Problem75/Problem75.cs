@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
+    //https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple
     public class Problem75 : IProblem
     {
         private const long ONE_MILLION_FIVE_HUNDRED_THOUSAND = 1500000;

@@ -143,6 +143,7 @@
     <Compile Include="Problems\051-100\81-90\Problem83\Problem83.cs" />
     <Compile Include="Problems\051-100\81-90\Problem84\Problem84.cs" />
     <Compile Include="Problems\051-100\81-90\Problem85\Problem85.cs" />
+    <Compile Include="Problems\051-100\81-90\Problem86\Problem86.cs" />
     <Compile Include="Problems\051-100\81-90\Problem87\Problem87.cs" />
     <Compile Include="Problems\051-100\81-90\Problem88\Problem88.cs" />
     <Compile Include="Problems\051-100\91-100\Problem92\Problem92.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Utils\NumberTheory\Primes.cs" />
     <Compile Include="Utils\GeometricNumbers\Triangular.cs" />
     <Compile Include="Utils\NumberTheory\Totient.cs" />
+    <Compile Include="Utils\NumberTheory\Pythagorean.cs" />
     <Compile Include="Words\EnglishDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
