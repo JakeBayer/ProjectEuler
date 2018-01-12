@@ -152,6 +152,9 @@
     <Compile Include="Problems\051-100\91-100\Problem97\Problem97.cs" />
     <Compile Include="Problems\201-250\201-210\Problem206\Problem206.cs" />
     <Compile Include="Problems\451-500\491-500\Problem500\Problem500.cs" />
+    <Compile Include="Problems\051-100\91-100\Problem99\Problem99.cs" />
+    <Compile Include="Problems\351-400\351-360\Problem357\Problem357.cs" />
+    <Compile Include="Problems\501-550\541-550\Problem549\Problem549.cs" />
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\FileHelper.cs" />
