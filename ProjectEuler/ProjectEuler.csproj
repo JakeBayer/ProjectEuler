@@ -75,6 +75,7 @@
     <Compile Include="Cards\PlayingCards\Parse\StandardParser.cs" />
     <Compile Include="Cards\PlayingCards\Suit.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\EqualityExtensions.cs" />
     <Compile Include="Extensions\NumberExtenstions.cs" />
     <Compile Include="Graph\Graph.cs" />
     <Compile Include="Graph\IGraph.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Problems\051-100\81-90\Problem86\Problem86.cs" />
     <Compile Include="Problems\051-100\81-90\Problem87\Problem87.cs" />
     <Compile Include="Problems\051-100\81-90\Problem88\Problem88.cs" />
+    <Compile Include="Problems\051-100\81-90\Problem89\Problem89.cs" />
     <Compile Include="Problems\051-100\91-100\Problem92\Problem92.cs" />
     <Compile Include="Problems\051-100\91-100\Problem94\Problem94.cs" />
     <Compile Include="Problems\051-100\91-100\Problem95\Problem95.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Utils\Palindrome.cs" />
     <Compile Include="Utils\Pandigital.cs" />
     <Compile Include="Utils\GeometricNumbers\Pentagonal.cs" />
+    <Compile Include="Utils\Parse\RomanNumeral.cs" />
     <Compile Include="Utils\Permutation.cs" />
     <Compile Include="Problems\001-050\21-30\Problem24\Problem24.cs" />
     <Compile Include="Problems\001-050\21-30\Problem26\Problem26.cs" />
@@ -204,6 +207,7 @@
     <Content Include="Problems\051-100\81-90\Problem82\test_matrix.txt" />
     <Content Include="Problems\051-100\81-90\Problem83\matrix.txt" />
     <Content Include="Problems\051-100\81-90\Problem83\test_matrix.txt" />
+    <Content Include="Problems\051-100\81-90\Problem89\roman.txt" />
     <Content Include="Words\words.txt" />
   </ItemGroup>
   <ItemGroup>
