@@ -9,20 +9,33 @@ namespace ProjectEuler.Utils
 {
     public static class RomanNumeral
     {
-        private static Dictionary<char, int> _numeralValue = new Dictionary<char, int>
+        #region Private fields
+        private static Dictionary<string, int> s_numeralValue = new Dictionary<string, int>
         {
-            ['I'] = 1,
-            ['V'] = 5,
-            ['X'] = 10,
-            ['L'] = 50,
-            ['C'] = 100,
-            ['D'] = 500,
-            ['M'] = 1000,
+            ["I"]  = 1,
+            ["IV"] = 4,
+            ["V"]  = 5,
+            ["IX"] = 9,
+            ["X"]  = 10,
+            ["XL"] = 40,
+            ["L"]  = 50,
+            ["XC"] = 90,
+            ["C"]  = 100,
+            ["CD"] = 400,
+            ["D"]  = 500,
+            ["CM"] = 900,
+            ["M"]  = 1000,
         };
+        #endregion
 
         public static bool IsValid(string romanNumeral)
         {
-            return HasValidCharacters(romanNumeral);
+            if (!HasValidCharacters(romanNumeral))
+            {
+                return false;
+            }
+            var numerals = SplitNumerals(romanNumeral).ToList();
+            return NumeralsAreValid(numerals) && NumeralsInDescendingOrder(numerals);
         }
 
         private static bool HasValidCharacters(string romanNumeral)
@@ -30,29 +43,54 @@ namespace ProjectEuler.Utils
             return romanNumeral.Any(c => !c.In('I', 'V', 'X', 'L', 'C', 'D', 'M'));
         }
 
-        private static bool HasProperSyntax(string romanNumeral)
+        private static IEnumerable<string> SplitNumerals(string romanNumerals)
         {
-
+            if (romanNumerals.Length == 0)
+            {
+                yield break;
+            }
+            var lastCharacter = romanNumerals[0];
+            var currentNumeral = lastCharacter.ToString();
+            for (int i = 1; i < romanNumerals.Length; i++)
+            {
+                if (s_numeralValue[romanNumerals[i].ToString()] < s_numeralValue[lastCharacter.ToString()])
+                {
+                    currentNumeral += romanNumerals[i];
+                }
+                else
+                {
+                    yield return currentNumeral;
+                    currentNumeral = "";
+                }
+                lastCharacter = romanNumerals[i];
+            }
         }
 
-        private static bool NumeralsInDescendingOrder(string romanNumeral)
+        private static bool NumeralsAreValid(IEnumerable<string> numerals)
         {
-            if (romanNumeral.Length <= 1)
+            return numerals.All(s_numeralValue.ContainsKey);
+        }
+
+        private static bool NumeralsInDescendingOrder(List<string> numerals)
+        {
+            for (int i = 1; i < numerals.Count; i++)
             {
-                return true;
-            }
-            int lastValue = _numeralValue[romanNumeral[0]];
-            bool lastValueWasSmaller = false;
-            for (int i = 1; i < romanNumeral.Length; i++)
-            {
-                int currentValue = _numeralValue[romanNumeral[0]];
-                if (currentValue >= lastValue)
+                if (s_numeralValue[numerals[i-1]] < s_numeralValue[numerals[i]])
                 {
-                    if (lastValueWasSmaller)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+            }
+            return true;
+        }
+
+        private static bool NeverExceededBySmallerDenominations(List<string> numerals)
+        {
+            int sum = 0;
+            for (int i = numerals.Count - 1; i >= 0; i++)
+            {
+                var numeral = numerals[i];
+                if (numeral == "X" && sum) 
+
             }
         }
 
