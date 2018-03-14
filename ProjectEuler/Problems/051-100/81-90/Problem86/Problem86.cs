@@ -15,11 +15,10 @@ namespace ProjectEuler.Problems
         private static HashSet<long> s_squares = new Square().GenerateUpTo(MAX * MAX);
         public string Run()
         {
-            var triples2 = Pythagorean.GeneratePrimitives.WhileOneLegLessThan(MAX);
-
+            var triples = Pythagorean.Triple.GeneratePrimitives.WhileOneLegLessThan(MAX);
             var cubesWithLongestSideM = new long[2 * MAX + 1];
             int i;
-            foreach (var triple in triples2)
+            foreach (var triple in triples)
             {
                 i = 1;
                 var newTriple = triple * i;

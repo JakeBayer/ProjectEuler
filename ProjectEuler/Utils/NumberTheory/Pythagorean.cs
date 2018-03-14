@@ -9,77 +9,9 @@ namespace ProjectEuler.Utils
 {
     public static class Pythagorean
     {
-        public static class GeneratePrimitives
-        {
-            public static List<Triple> WhileOneLegLessThan(long upTo)
-            {
-                var triplets = new List<Triple>();
-                for (var n = 1; n * n <= upTo; n += 2)
-                {
-                    for (var m = n + 2; m * n < upTo || (m * m - n * n) / 2 < upTo; m += 2)
-                    {
-                        if (n.GCD(m) == 1)
-                        {
-                            triplets.Add(new Triple(m * n, (m * m - n * n) / 2, (m * m + n * n) / 2));
-                        }
-                    }
-                }
-                return triplets;
-            }
-
-            public static List<Triple> WhileLegsLessThan(long upTo)
-            {
-                var triplets = new List<Triple>();
-                for (var n = 1; n * n <= upTo; n += 2)
-                {
-                    for (var m = n + 2; m * n < upTo && (m * m - n * n) / 2 < upTo; m += 2)
-                    {
-                        if (n.GCD(m) == 1)
-                        {
-                            triplets.Add(new Triple(m * n, (m * m - n * n) / 2, (m * m + n * n) / 2));
-                        }
-                    }
-                }
-                return triplets;
-            }
-
-            public static List<Triple> WhileHypotnuseLessThan(long upTo)
-            {
-                var triplets = new List<Triple>();
-                for (var n = 1; n * n <= upTo; n += 2)
-                {
-                    for (var m = n + 2; m * m + n * n <= upTo * 2; m += 2)
-                    {
-                        if (n.GCD(m) == 1)
-                        {
-                            triplets.Add(new Triple(m * n, (m * m - n * n) / 2, (m * m + n * n) / 2));
-                        }
-                    }
-                }
-                return triplets;
-            }
-        }
-
-        public static List<Triple> GeneratePrimitiveTriples(long upTo)
-        {
-            var triplets = new List<Triple>();
-            for (var n = 1; n * n <= upTo; n += 2)
-            {
-                for (var m = n + 2; m * n < upTo && (m*m - n*n)/2 < upTo; m += 2)
-                {
-                    if (n.GCD(m) == 1)
-                    {
-                        triplets.Add(new Triple(m * n, (m * m - n * n) / 2, (m * m + n * n) / 2));
-                    }
-                }
-            }
-            return triplets;
-        }
-
-
         public class Triple
         {
-            public Triple(long _a, long _b, long _c)
+            private Triple(long _a, long _b, long _c)
             {
                 if (_a <= _b)
                 {
@@ -115,6 +47,40 @@ namespace ProjectEuler.Utils
             public override string ToString()
             {
                 return $"{{{a}, {b}, {c}}}";
+            }
+
+            public static class GeneratePrimitives
+            {
+                public static List<Triple> WhileOneLegLessThan(long upTo)
+                {
+                    return WhileMNConditionMet((m, n) => m * n < upTo || (m * m - n * n) / 2 < upTo, upTo);
+                }
+
+                public static List<Triple> WhileLegsLessThan(long upTo)
+                {
+                    return WhileMNConditionMet((m, n) => m * n < upTo && (m * m - n * n) / 2 < upTo, upTo);
+                }
+
+                public static List<Triple> WhileHypotnuseLessThan(long upTo)
+                {
+                    return WhileMNConditionMet((m, n) => m * m + n * n <= upTo * 2, upTo);
+                }
+
+                private static List<Triple> WhileMNConditionMet(Func<int, int, bool> mnCondition, long upTo)
+                {
+                    var triplets = new List<Triple>();
+                    for (var n = 1; n * n <= upTo; n += 2)
+                    {
+                        for (var m = n + 2; mnCondition(m, n); m += 2)
+                        {
+                            if (n.GCD(m) == 1)
+                            {
+                                triplets.Add(new Triple(m * n, (m * m - n * n) / 2, (m * m + n * n) / 2));
+                            }
+                        }
+                    }
+                    return triplets;
+                }
             }
         }
     }
