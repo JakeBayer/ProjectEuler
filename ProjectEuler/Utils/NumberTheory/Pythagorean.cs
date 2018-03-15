@@ -33,9 +33,11 @@ namespace ProjectEuler.Utils
                 c = triple.c;
             }
 
+#pragma warning disable IDE1006 // Naming Styles
             public long a { get; set; }
             public long b { get; set; }
             public long c { get; set; }
+#pragma warning restore IDE1006 // Naming Styles
 
             public bool IsValid => a * a + b * b == c * c;
 

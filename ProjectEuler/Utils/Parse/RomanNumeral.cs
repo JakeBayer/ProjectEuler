@@ -243,6 +243,7 @@ namespace ProjectEuler.Utils
         }
         #endregion
 
+        #region Printing
         public static string ToRomanNumeral(int value)
         {
             var sb = new StringBuilder();
@@ -260,6 +261,7 @@ namespace ProjectEuler.Utils
             }
             return sb.ToString();
         }
+        #endregion
 
         public int Value => _value;
 
