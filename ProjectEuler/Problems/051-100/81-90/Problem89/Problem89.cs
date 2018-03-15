@@ -6,14 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.Problems._051_100._81_90.Problem89
+namespace ProjectEuler.Problems
 {
     public class Problem89 : IProblem
     {
 
         public string Run()
         {
-            throw new NotImplementedException();
+            var charSaved = 0;
+            var numerals = ReadValues();
+            foreach(var numeral in numerals)
+            {
+                charSaved += numeral.Length - RomanNumeral.ToRomanNumeral(RomanNumeral.Parse(numeral)).Length;
+            }
+            return charSaved.ToString();
         }
 
         private IEnumerable<string> ReadValues()
