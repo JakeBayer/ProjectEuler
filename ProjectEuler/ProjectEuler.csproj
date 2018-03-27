@@ -149,7 +149,9 @@
     <Compile Include="Problems\051-100\81-90\Problem88\Problem88.cs" />
     <Compile Include="Problems\051-100\81-90\Problem89\Problem89.cs" />
     <Compile Include="Problems\051-100\81-90\Problem90\Problem90.cs" />
+    <Compile Include="Problems\051-100\91-100\Problem91\Problem91.cs" />
     <Compile Include="Problems\051-100\91-100\Problem92\Problem92.cs" />
+    <Compile Include="Problems\051-100\91-100\Problem93\Problem93.cs" />
     <Compile Include="Problems\051-100\91-100\Problem94\Problem94.cs" />
     <Compile Include="Problems\051-100\91-100\Problem95\Problem95.cs" />
     <Compile Include="Problems\051-100\91-100\Problem97\Problem97.cs" />

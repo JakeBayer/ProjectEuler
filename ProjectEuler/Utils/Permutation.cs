@@ -31,7 +31,7 @@ namespace ProjectEuler.Utils
             return _set;
         }
 
-        private bool NextPermutation(List<T> set)
+        public bool NextPermutation(List<T> set)
         {
             // Find non-increasing suffix
             int i = set.Count - 1;
