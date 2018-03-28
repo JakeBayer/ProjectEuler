@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.Cards
+namespace Sudoku
 {
-    public interface ICardParser<TCard>
-        where TCard : CardBase
+    public class BoardFactory
     {
-        TCard Parse(string card);
+        
     }
 }

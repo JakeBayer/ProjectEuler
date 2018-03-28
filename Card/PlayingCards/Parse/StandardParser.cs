@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Card.Parse;
 
-namespace ProjectEuler.Cards
+namespace Card.PlayingCards.Parse
 {
     public class StandardParser : ICardParser<PlayingCard>
     {

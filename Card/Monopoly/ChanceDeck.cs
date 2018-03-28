@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjectEuler.Cards.Monopoly
+namespace Card.Monopoly
 {
     public class ChanceDeck : Deck<MonopolyCard>
     {

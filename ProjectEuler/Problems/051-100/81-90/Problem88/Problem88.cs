@@ -7,14 +7,24 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
+    /* To solve this, we don't actually calculate the sets that lead to the sum-product numbers. Instead, we take advantage
+     * of certain properties of sum-product sets to merely denote their existance. For example, let M(k, S, P) represent a boolean
+     * that denotes whether a set of size k exists that has a sum S and a product P. The following truths will help our search:
+     * 1. M(1, S, P) ==> S == P
+     * 2. For any k, the set {2, k, 1, ..., 1} of size k is a sum-product number. Therefore, any minimum sum-product number is &lt;= 2k, and any element of the sum-product set &lt;= k
+     * 3. M(k, S, P) ==> 
+     *     a. ∃a, 1 &lt; a &lt;= k such that M(k-1, S-a, P/a) 
+     *     OR
+     *     b. M(1, S - k + 1, P) 
+    */
     /// <summary>
     /// To solve this, we don't actually calculate the sets that lead to the sum-product numbers. Instead, we take advantage
     /// of certain properties of sum-product sets to merely denote their existance. For example, let M(k, S, P) represent a boolean
     /// that denotes whether a set of size k exists that has a sum S and a product P. The following truths will help our search:
     /// 1. M(1, S, P) ==> S == P
-    /// 2. For any k, the set {2, k, 1, ..., 1} of size k is a sum-product number. Therefore, any minimum sum-product number is <= 2k, and any element of the sum-product set <= k
+    /// 2. For any k, the set {2, k, 1, ..., 1} of size k is a sum-product number. Therefore, any minimum sum-product number is &lt;= 2k, and any element of the sum-product set &lt;= k
     /// 3. M(k, S, P) ==> 
-    ///     a. ∃a, 1 < a <= k such that M(k-1, S-a, P/a) 
+    ///     a. ∃a, 1 &lt; a &lt;= k such that M(k-1, S-a, P/a) 
     ///     OR
     ///     b. M(1, S - k + 1, P) 
     /// </summary>
@@ -28,7 +38,7 @@ namespace ProjectEuler.Problems
         };
 
         private const int MAX_K = 12000;
-        private Dictionary<int, Dictionary<int, bool>>[] ProductAndSumGridsByK = new Dictionary<int, Dictionary<int, bool>>[MAX_K + 1];
+        private readonly Dictionary<int, Dictionary<int, bool>>[] ProductAndSumGridsByK = new Dictionary<int, Dictionary<int, bool>>[MAX_K + 1];
         
         public Problem88()
         {
