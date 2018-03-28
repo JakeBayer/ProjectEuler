@@ -1,20 +1,17 @@
-﻿using ProjectEuler.Cards;
-using ProjectEuler.Cards.Monopoly;
+﻿using Card.Monopoly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem84 : IProblem
     {
-        private static HashSet<int> s_chanceSquares = new HashSet<int> { 7, 22, 36 };
-        private static HashSet<int> s_communityChestSquares = new HashSet<int> { 2, 27, 33 };
+        private static readonly HashSet<int> s_chanceSquares = new HashSet<int> { 7, 22, 36 };
+        private static readonly HashSet<int> s_communityChestSquares = new HashSet<int> { 2, 27, 33 };
 
-        private ChanceDeck _chanceDeck = new ChanceDeck();
-        private CommunityChestDeck _ccDeck = new CommunityChestDeck();
+        private readonly ChanceDeck _chanceDeck = new ChanceDeck();
+        private readonly CommunityChestDeck _ccDeck = new CommunityChestDeck();
 
         public string Run()
         {

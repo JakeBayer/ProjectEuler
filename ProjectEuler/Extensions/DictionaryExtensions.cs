@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ProjectEuler.Extensions
 {
@@ -16,8 +12,7 @@ namespace ProjectEuler.Extensions
         /// <param name="key"></param>
         public static void Increment<T>(this Dictionary<T, int> dictionary, T key)
         {
-            int count;
-            dictionary.TryGetValue(key, out count);
+            dictionary.TryGetValue(key, out var count);
             dictionary[key] = count + 1;
         }
     }

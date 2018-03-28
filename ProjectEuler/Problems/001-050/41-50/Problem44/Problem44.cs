@@ -1,16 +1,14 @@
 ﻿using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.GeometricNumbers;
 
 namespace ProjectEuler.Problems
 {
     public class Problem44 : IProblem
     {
-        private Pentagonal Pentagonal = new Pentagonal();
-        private List<long> pentagonals = new List<long> { 1 };
+        private readonly Pentagonal Pentagonal = new Pentagonal();
+        private readonly List<long> pentagonals = new List<long> { 1 };
         private long current = 1;
         private long min = long.MaxValue;
         public string Run()

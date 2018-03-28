@@ -1,9 +1,7 @@
 ﻿using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.GeometricNumbers;
 
 namespace ProjectEuler.Problems
 {
@@ -11,10 +9,10 @@ namespace ProjectEuler.Problems
     {
         private const long TEN_THOUSAND = 10000;
 
-        private Dictionary<string, Dictionary<int, HashSet<long>>> frontTwoToBaseToNumber = new Dictionary<string, Dictionary<int, HashSet<long>>>();
-        private Dictionary<string, Dictionary<int, HashSet<long>>> backTwoToBaseToNumber = new Dictionary<string, Dictionary<int, HashSet<long>>>();
+        private readonly Dictionary<string, Dictionary<int, HashSet<long>>> frontTwoToBaseToNumber = new Dictionary<string, Dictionary<int, HashSet<long>>>();
+        private readonly Dictionary<string, Dictionary<int, HashSet<long>>> backTwoToBaseToNumber = new Dictionary<string, Dictionary<int, HashSet<long>>>();
 
-        private List<List<long>> _cycles = new List<List<long>>();
+        private readonly List<List<long>> _cycles = new List<List<long>>();
 
         private void InitializeMap()
         {

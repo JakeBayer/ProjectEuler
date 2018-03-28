@@ -2,16 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.NumberTheory;
 
 namespace ProjectEuler.Problems
 {
     public class Problem46 : IProblem
     {
         private const long MAX = 1000000;
-        private HashSet<long> primes = Prime.Sieve.UpTo<HashSet<long>>(MAX);
-        private List<long> squares = new List<long>(Enumerable.Range(0, (int)Math.Sqrt(MAX)).Select(i => (long)i * (long)i));
+        private readonly HashSet<long> primes = Prime.Sieve.UpTo<HashSet<long>>(MAX);
+        private readonly List<long> squares = new List<long>(Enumerable.Range(0, (int)Math.Sqrt(MAX)).Select(i => (long)i * (long)i));
         public string Run()
         {
             long i = 7;

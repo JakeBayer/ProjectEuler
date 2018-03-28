@@ -1,16 +1,12 @@
-﻿using ProjectEuler.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MathUtil.GeometricNumbers;
+using ProjectEuler.Utils;
 
 namespace ProjectEuler.Problems
 {
     public class Problem45 : IProblem
     {
-        private Hexagonal Hexagonal = new Hexagonal();
-        private Pentagonal Pentagonal = new Pentagonal();
+        private readonly Hexagonal Hexagonal = new Hexagonal();
+        private readonly Pentagonal Pentagonal = new Pentagonal();
         public string Run()
         {
             long n = 144, hex_n = 0;

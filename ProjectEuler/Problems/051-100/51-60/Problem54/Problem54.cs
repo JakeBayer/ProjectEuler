@@ -1,11 +1,8 @@
-﻿using ProjectEuler.Cards;
-using ProjectEuler.Cards.Poker;
-using System;
-using System.Collections.Generic;
+﻿using Card.PlayingCards.Parse;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Card.PlayingCards.Poker;
+using Card.PlayingCards.Poker.PokerHandComparer;
 
 namespace ProjectEuler.Problems
 {

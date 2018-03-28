@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ProjectEuler.Graph
 {
     class Graph<T>
     {
-        private IDictionary<T, HashSet<T>> _neighbors;
+        private readonly IDictionary<T, HashSet<T>> _neighbors;
 
         public Graph(IDictionary<T, HashSet<T>> nodes)
         {

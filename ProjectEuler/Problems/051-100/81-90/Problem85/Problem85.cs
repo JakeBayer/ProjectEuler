@@ -1,15 +1,13 @@
 ﻿using ProjectEuler.Utils;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.GeometricNumbers;
 
 namespace ProjectEuler.Problems
 {
     public class Problem85 : IProblem
     {
-        private long TWO_MILLION = 2000000;
+        private readonly long TWO_MILLION = 2000000;
         public string Run()
         {
             var triangulars = new Triangular().GenerateWhileLessThan(TWO_MILLION + 1001).ToList();

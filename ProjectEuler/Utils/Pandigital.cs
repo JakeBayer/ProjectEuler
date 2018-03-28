@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Utils
 {
     public static class Pandigital
     {
-        private static HashSet<int> _digits = new HashSet<int>(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+        private static readonly HashSet<int> s_digits = new HashSet<int>(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
 
         public static bool Is(IEnumerable<int> set)
         {
-            return Is(set, _digits);
+            return Is(set, s_digits);
         }
 
         public static bool Is(IEnumerable<int> set, int n)

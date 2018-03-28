@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem29 : IProblem
     {
-        private HashSet<int> _usedRoots = new HashSet<int>();
+        private readonly HashSet<int> _usedRoots = new HashSet<int>();
         private const int MAX_VAL = 100;
         public int CountsForRoot(int root)
         {

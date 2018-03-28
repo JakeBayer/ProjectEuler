@@ -1,20 +1,18 @@
 ﻿using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.NumberTheory;
 
 namespace ProjectEuler.Problems
 {
     public class Problem500 : IProblem
     {
         private const int TEN_MILLION = 10000000;
-        private List<int> _primes = Prime.Sieve.UpTo<List<int>>(TEN_MILLION);
-        private List<List<long>> _memoizedPowers = new List<List<long>>();
-        private LinkedList<int> _locationOfLowestPrimePower = new LinkedList<int>();
+        private readonly List<int> _primes = Prime.Sieve.UpTo<List<int>>(TEN_MILLION);
+        private readonly List<List<long>> _memoizedPowers = new List<List<long>>();
+        private readonly LinkedList<int> _locationOfLowestPrimePower = new LinkedList<int>();
         // (1,1), (2,3), (
-        private int[] _potentialPowers;
+        private readonly int[] _potentialPowers;
         public Problem500()
         {
             _potentialPowers = Enumerable.Range(0, 31).Select(i =>

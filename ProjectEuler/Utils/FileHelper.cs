@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Utils
 {
@@ -34,7 +31,7 @@ namespace ProjectEuler.Utils
 
         public class FileHelperWithPath
         {
-            private string _filePathBase;
+            private readonly string _filePathBase;
             public FileHelperWithPath(string filePathBase)
             {
                 _filePathBase = filePathBase;

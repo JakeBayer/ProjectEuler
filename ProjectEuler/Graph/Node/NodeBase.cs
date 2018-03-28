@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectEuler.Graph
+﻿namespace ProjectEuler.Graph
 {
     public abstract class NodeBase<T> : INode<T>
     {
-        private T _value;
+        private readonly T _value;
 
         public NodeBase(T value)
         {

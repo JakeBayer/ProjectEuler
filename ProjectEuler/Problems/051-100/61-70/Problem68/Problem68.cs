@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
@@ -10,10 +8,10 @@ namespace ProjectEuler.Problems
     {
         private class MagicPentagon
         {
-            private int[] a = new int[10];
+            private readonly int[] a = new int[10];
             private int? EstablishedSum = null;
 
-            private static List<List<int>> IndexGroups = new List<List<int>>
+            private static readonly List<List<int>> IndexGroups = new List<List<int>>
             {
                 new List<int> {0, 5, 6},
                 new List<int> {1, 6, 7},

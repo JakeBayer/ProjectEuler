@@ -1,11 +1,4 @@
-﻿using ProjectEuler.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectEuler.Problems
+﻿namespace ProjectEuler.Problems
 {
     public class Problem57 : IProblem
     {

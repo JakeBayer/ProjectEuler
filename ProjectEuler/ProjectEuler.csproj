@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ProjectEuler</RootNamespace>
     <AssemblyName>ProjectEuler</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,37 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cards\CardBase.cs" />
-    <Compile Include="Cards\Deck.cs" />
-    <Compile Include="Cards\Hand.cs" />
-    <Compile Include="Cards\Monopoly\ChanceDeck.cs" />
-    <Compile Include="Cards\Monopoly\CommunityChestDeck.cs" />
-    <Compile Include="Cards\Monopoly\MonopolyCard.cs" />
-    <Compile Include="Cards\Parse\ICardParser.cs" />
-    <Compile Include="Cards\PlayingCards\PlayingCard.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHand.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\FullHouseComparer.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\IPokerRankComparer.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\PokerHandComparer.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\StandardComparer.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\StraightComparer.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandComparer\StraightFlushComparer.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\FlushEvlauator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\FourOfAKindEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\FullHouseEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\HighCardEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerCard.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\IPokerRankEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\PairEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\PokerHandEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\StraightEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\StraightFlushEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\ThreeOfAKindEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandEvaluator\TwoPairEvaluator.cs" />
-    <Compile Include="Cards\PlayingCards\Poker\PokerHandRank.cs" />
-    <Compile Include="Cards\PlayingCards\Rank.cs" />
-    <Compile Include="Cards\PlayingCards\Parse\StandardParser.cs" />
-    <Compile Include="Cards\PlayingCards\Suit.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EqualityExtensions.cs" />
     <Compile Include="Extensions\NumberExtenstions.cs" />
@@ -163,20 +133,9 @@
     <Compile Include="Types\Fraction.cs" />
     <Compile Include="Types\Huge.cs" />
     <Compile Include="Utils\FileHelper.cs" />
-    <Compile Include="Utils\NumberTheory\Combinatorics.cs" />
-    <Compile Include="Utils\EuclideanAlgorithm\ExtendedEuclideanSolution.cs" />
-    <Compile Include="Utils\EuclideanAlgorithm\Modular.cs" />
-    <Compile Include="Utils\NumberTheory\Factorial.cs" />
-    <Compile Include="Utils\NumberTheory\Factorization.cs" />
-    <Compile Include="Utils\GeometricNumbers\GeometricNumbers.cs" />
-    <Compile Include="Utils\GeometricNumbers\Hexagonal.cs" />
-    <Compile Include="Utils\GeometricNumbers\Square.cs" />
-    <Compile Include="Utils\NumberTheory\Partition.cs" />
     <Compile Include="Utils\Palindrome.cs" />
     <Compile Include="Utils\Pandigital.cs" />
-    <Compile Include="Utils\GeometricNumbers\Pentagonal.cs" />
     <Compile Include="Utils\Parse\RomanNumeral.cs" />
-    <Compile Include="Utils\Permutation.cs" />
     <Compile Include="Problems\001-050\21-30\Problem24\Problem24.cs" />
     <Compile Include="Problems\001-050\21-30\Problem26\Problem26.cs" />
     <Compile Include="Problems\001-050\21-30\Problem27\Problem27.cs" />
@@ -187,10 +146,6 @@
     <Compile Include="Problems\001-050\31-40\Problem34\Problem34.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\NumberTheory\Primes.cs" />
-    <Compile Include="Utils\GeometricNumbers\Triangular.cs" />
-    <Compile Include="Utils\NumberTheory\Totient.cs" />
-    <Compile Include="Utils\NumberTheory\Pythagorean.cs" />
     <Compile Include="Words\EnglishDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +170,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Problems\001-050\1-10\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Card\Card.csproj">
+      <Project>{04357eb7-94a9-4dd8-a57a-0e40624f7c31}</Project>
+      <Name>Card</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathUtil\MathUtil.csproj">
+      <Project>{38e77247-8693-4bbb-ba1b-364a4a9f9fb1}</Project>
+      <Name>MathUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sudoku\Sudoku.csproj">
+      <Project>{dd81a4cb-88ea-47a6-a505-dff4b02f6476}</Project>
+      <Name>Sudoku</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

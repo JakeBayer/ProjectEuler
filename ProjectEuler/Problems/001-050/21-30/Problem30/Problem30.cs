@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem30 : IProblem
     {
-        private List<int> powerDigitSums = new List<int>(); 
+        private readonly List<int> powerDigitSums = new List<int>(); 
 
         public string Run()
         {

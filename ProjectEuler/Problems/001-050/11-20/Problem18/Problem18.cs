@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem18 : IProblem
     {
-        private List<List<long>> Values, Totals; 
+        private readonly List<List<long>> Values;
+        private readonly List<List<long>> Totals;
 
         public Problem18()
         {

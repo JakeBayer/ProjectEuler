@@ -1,18 +1,15 @@
 ﻿using ProjectEuler.Extensions;
 using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem79 : IProblem
     {
         private int _minLength = int.MaxValue;
-        private List<PasscodeState> _minPasscodes = new List<PasscodeState>();
+        private readonly List<PasscodeState> _minPasscodes = new List<PasscodeState>();
 
         private List<List<int>> ReadValues()
         {
@@ -60,8 +57,8 @@ namespace ProjectEuler.Problems
 
         private class PasscodeState
         {
-            private List<int> _passcode = new List<int>();
-            private List<List<int>> _substrings = new List<List<int>>();
+            private readonly List<int> _passcode = new List<int>();
+            private readonly List<List<int>> _substrings = new List<List<int>>();
 
             public PasscodeState(IEnumerable<int> passcode, IEnumerable<IEnumerable<int>> substrings)
             {

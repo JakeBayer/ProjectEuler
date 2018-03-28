@@ -3,15 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Utils
 {
     public class RomanNumeral
     {
         #region Private Fields
-        private string _romanNumeral;
-        private int _value;
+        private readonly string _romanNumeral;
+        private readonly int _value;
         #endregion
 
         #region Constructors
@@ -48,7 +47,7 @@ namespace ProjectEuler.Utils
             public static readonly string[] InDescendingOrder = new []{ M, CM, D, CD, C, XC, L, XL, X, IX, V, IV, I };
         }
 
-        private static Dictionary<string, int> s_numeralValue = new Dictionary<string, int>
+        private static readonly Dictionary<string, int> s_numeralValue = new Dictionary<string, int>
         {
             [Numeral.I]  = 1,
             [Numeral.IV] = 4,

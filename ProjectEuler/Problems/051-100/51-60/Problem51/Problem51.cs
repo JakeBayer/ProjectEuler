@@ -1,18 +1,17 @@
 ﻿using ProjectEuler.Extensions;
 using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using MathUtil.NumberTheory;
 
 namespace ProjectEuler.Problems
 {
     public class Problem51 : IProblem
     {
         private const long MAX = 100000000;
-        private SortedSet<long> primes = Prime.Sieve.UpTo<SortedSet<long>>(MAX);
-        private HashSet<long> usedPrimes = new HashSet<long>();
+        private readonly SortedSet<long> primes = Prime.Sieve.UpTo<SortedSet<long>>(MAX);
+        private readonly HashSet<long> usedPrimes = new HashSet<long>();
         private StringBuilder sb = new StringBuilder();
         public string Run()
         {

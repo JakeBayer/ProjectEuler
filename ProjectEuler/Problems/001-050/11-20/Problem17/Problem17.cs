@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem17 : IProblem
     {
-        private static Dictionary<int, int> s_numberLengthMappings = new Dictionary<int, int>()
+        private static readonly Dictionary<int, int> s_numberLengthMappings = new Dictionary<int, int>()
         {
             [0] = 0,
             [1] = 3,

@@ -1,17 +1,15 @@
 ﻿using ProjectEuler.Extensions;
 using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.NumberTheory;
 
 namespace ProjectEuler.Problems
 {
     public class Problem74 : IProblem
     {
         private const long ONE_MILLION = 1000000;
-        private long[] _factorial = Enumerable.Range(0, 10).Select(n => Factorial.ToLong(n)).ToArray();
+        private readonly long[] _factorial = Enumerable.Range(0, 10).Select(n => Factorial.ToLong(n)).ToArray();
 
         public string Run()
         {

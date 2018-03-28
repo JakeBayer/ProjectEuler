@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler
 {
     public class Problem32 : IProblem
     {
-        private HashSet<int> productSet = new HashSet<int>(); 
+        private readonly HashSet<int> productSet = new HashSet<int>(); 
 
         public string Run()
         {

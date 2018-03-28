@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
@@ -37,7 +34,7 @@ namespace ProjectEuler.Problems
             }
         }
 
-        private Pair<int>[] _squares = new[] {
+        private readonly Pair<int>[] _squares = new[] {
             new Pair<int> { a = 0, b = 1 },
             new Pair<int> { a = 0, b = 4 },
             new Pair<int> { a = 0, b = 6 }, // 6 and 9 are the same (don't ask)

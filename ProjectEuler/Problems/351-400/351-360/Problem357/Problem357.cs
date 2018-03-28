@@ -1,16 +1,14 @@
 ﻿using ProjectEuler.Utils;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.NumberTheory;
 
 namespace ProjectEuler.Problems
 {
     public class Problem357 : IProblem
     {
         private const long ONE_HUNDRED_MILLION = 100000000;
-        private HashSet<long> _primes;
+        private readonly HashSet<long> _primes;
 
         public Problem357()
         {

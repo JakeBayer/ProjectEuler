@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ProjectEuler.Graph
 {
     public class Node<T> : NodeBase<T>
     {
-        private LinkedList<Node<T>> _neighbors;
+        private readonly LinkedList<Node<T>> _neighbors;
         public Node(T value) : base(value)
         {
             _neighbors = new LinkedList<Node<T>>();

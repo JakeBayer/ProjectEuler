@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectEuler.Problems
+﻿namespace ProjectEuler.Problems
 {
     public class Problem14 : IProblem
     {
-        private long[] CollatzLength = new long[10000000];
+        private readonly long[] CollatzLength = new long[10000000];
 
         private void GenerateCollatzLengths()
         {

@@ -1,10 +1,8 @@
 ﻿using ProjectEuler.Graph;
 using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MathUtil.NumberTheory;
 
 namespace ProjectEuler.Problems
 {
@@ -12,7 +10,7 @@ namespace ProjectEuler.Problems
     {
         private const long UpTo = 10000;
         private readonly SortedSet<long> _primes = Prime.Sieve.UpTo<SortedSet<long>>(UpTo);
-        private Graph<long> _primeGraph = new Graph<long>(new Dictionary<long, HashSet<long>>());
+        private readonly Graph<long> _primeGraph = new Graph<long>(new Dictionary<long, HashSet<long>>());
 
         public Problem60()
         {
@@ -55,7 +53,7 @@ namespace ProjectEuler.Problems
             }
         }
 
-        private List<HashSet<long>> _cliques = new List<HashSet<long>>();
+        private readonly List<HashSet<long>> _cliques = new List<HashSet<long>>();
 
         private void BronKerbosch2(HashSet<long> R, HashSet<long> P, HashSet<long> X)
         {

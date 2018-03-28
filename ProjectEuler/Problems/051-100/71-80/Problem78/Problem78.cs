@@ -1,18 +1,12 @@
-using ProjectEuler.Utils;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem78 : IProblem
     {
         private const int ONE_MILLION = 1000000;
-        private List<int> _partitionsModMillion = new List<int> { 1, 1 };
-        private List<int> _generalizedPentagonals = new List<int> { 0 };
+        private readonly List<int> _partitionsModMillion = new List<int> { 1, 1 };
+        private readonly List<int> _generalizedPentagonals = new List<int> { 0 };
         public string Run()
         {
             var curr = 1;

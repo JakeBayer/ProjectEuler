@@ -1,16 +1,12 @@
-﻿using ProjectEuler.Words;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
     public class Problem59 : IProblem
     {
-        private HashSet<char> _acceptablePunctuation = new HashSet<char>
+        private readonly HashSet<char> _acceptablePunctuation = new HashSet<char>
         {
             ' ','!','"','\'', '(', ')','.',',','?',(char)12,(char)15
         };
