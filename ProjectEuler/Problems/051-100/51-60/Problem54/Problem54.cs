@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Card.PlayingCards.Poker;
 using Card.PlayingCards.Poker.PokerHandComparer;
+using ProjectEuler.Utils;
 
 namespace ProjectEuler.Problems
 {
@@ -15,7 +16,7 @@ namespace ProjectEuler.Problems
 
             int winningHands = 0;
 
-            StreamReader reader = new StreamReader(@"~\..\..\..\Problems\51-100\51-60\Problem54\poker.txt");
+            var reader = FileHelper.ForProblem(54).OpenFile("poker.txt");
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();

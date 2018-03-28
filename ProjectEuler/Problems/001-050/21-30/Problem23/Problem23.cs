@@ -7,7 +7,7 @@ namespace ProjectEuler.Problems
 {
     public class Problem23 : IProblem
     {
-        private IEnumerable<long> nonAbundantSums;
+        private IEnumerable<long> _nonAbundantSums;
 
         public string Run()
         {
@@ -20,8 +20,8 @@ namespace ProjectEuler.Problems
             var abundantNums = factorizations.Where(x => x.Value.SumOfFactors > 2 * x.Key).Select(x => x.Key);
 
             var abundantHash = new HashSet<long>(abundantNums);
-            nonAbundantSums = nums.Where(x => !abundantHash.Any(y => abundantHash.Contains(x - y)));
-            return nonAbundantSums.Sum().ToString();
+            _nonAbundantSums = nums.Where(x => !abundantHash.Any(y => abundantHash.Contains(x - y)));
+            return _nonAbundantSums.Sum().ToString();
         }
     }
 }

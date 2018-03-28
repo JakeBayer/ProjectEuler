@@ -3,6 +3,7 @@ using ProjectEuler.Utils;
 using System.Collections.Generic;
 using System.Linq;
 using MathUtil.NumberTheory;
+using MathUtil.NumberTheory.Extensions;
 
 namespace ProjectEuler.Problems
 {
@@ -32,7 +33,7 @@ namespace ProjectEuler.Problems
         {
             var p1_str = prime1.ToString();
             var p2_str = prime2.ToString();
-            if (Prime.IsPrime(long.Parse(p1_str + p2_str)) && Prime.IsPrime(long.Parse(p2_str + p1_str)))
+            if (long.Parse(p1_str + p2_str).IsPrime() && long.Parse(p2_str + p1_str).IsPrime())
             {
                 if (!_primeGraph.Neighbors.ContainsKey(prime1))
                 {

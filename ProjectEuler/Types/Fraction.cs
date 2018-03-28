@@ -167,14 +167,8 @@ namespace ProjectEuler.Types
         /// <example>For 3/4ths, this is the 3</example>
         public long Numerator
         {
-            get
-            {
-                return m_Numerator;
-            }
-            set
-            {
-                m_Numerator = value;
-            }
+            get => m_Numerator;
+            set => m_Numerator = value;
         }
 
         /// <summary>
@@ -183,14 +177,8 @@ namespace ProjectEuler.Types
         /// <example>For 3/4ths, this is the 4</example>
         public long Denominator
         {
-            get
-            {
-                return m_Denominator;
-            }
-            set
-            {
-                m_Denominator = value;
-            }
+            get => m_Denominator;
+            set => m_Denominator = value;
         }
         #endregion
 
@@ -221,7 +209,7 @@ namespace ProjectEuler.Types
         {
             if (this.m_Denominator == 0)
             {
-                throw new FractionException(string.Format("Cannot convert {0} to Int32", IndeterminateTypeName(this.m_Numerator)), new System.NotFiniteNumberException());
+                throw new FractionException($"Cannot convert {IndeterminateTypeName(this.m_Numerator)} to Int32", new System.NotFiniteNumberException());
             }
 
             long bestGuess = this.m_Numerator / this.m_Denominator;
@@ -247,7 +235,7 @@ namespace ProjectEuler.Types
         {
             if (this.m_Denominator == 0)
             {
-                throw new FractionException(string.Format("Cannot convert {0} to Int64", IndeterminateTypeName(this.m_Numerator)), new System.NotFiniteNumberException());
+                throw new FractionException($"Cannot convert {IndeterminateTypeName(this.m_Numerator)} to Int64", new System.NotFiniteNumberException());
             }
 
             return this.m_Numerator / this.m_Denominator;
@@ -336,13 +324,13 @@ namespace ProjectEuler.Types
                 return Zero;
 
             if (inValue > Int64.MaxValue)
-                throw new OverflowException(string.Format("Double {0} too large", inValue));
+                throw new OverflowException($"Double {inValue} too large");
 
             if (inValue < -Int64.MaxValue)
-                throw new OverflowException(string.Format("Double {0} too small", inValue));
+                throw new OverflowException($"Double {inValue} too small");
 
             if (-EpsilonDouble < inValue && inValue < EpsilonDouble)
-                throw new ArithmeticException(string.Format("Double {0} cannot be represented", inValue));
+                throw new ArithmeticException($"Double {inValue} cannot be represented");
 
             int sign = Math.Sign(inValue);
             inValue = Math.Abs(inValue);
@@ -361,8 +349,8 @@ namespace ProjectEuler.Types
         /// PositiveInfinity = 1/0 and NegativeInfinity = -1/0</example>
         public static Fraction ToFraction(string inValue)
         {
-            if (inValue == null || inValue == string.Empty)
-                throw new ArgumentNullException("inValue");
+            if (string.IsNullOrEmpty(inValue))
+                throw new ArgumentNullException(nameof(inValue));
 
             // could also be NumberFormatInfo.InvariantInfo
             NumberFormatInfo info = NumberFormatInfo.CurrentInfo;
@@ -468,10 +456,12 @@ namespace ProjectEuler.Types
         public Fraction Inverse()
         {
             // don't use the obvious constructor because we do not want it normalized at this time
-            Fraction frac = new Fraction();
+            Fraction frac = new Fraction
+            {
+                m_Numerator   = this.m_Denominator,
+                m_Denominator = this.m_Numerator
+            };
 
-            frac.m_Numerator = this.m_Denominator;
-            frac.m_Denominator = this.m_Numerator;
             return frac;
         }
 
@@ -930,7 +920,7 @@ namespace ProjectEuler.Types
             }
             catch (Exception e)
             {
-                throw new FractionException(string.Format("CompareTo({0}, {1}) error", this, right), e);
+                throw new FractionException($"CompareTo({this}, {right}) error", e);
             }
         }
         #endregion

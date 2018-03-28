@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Text;
+using ProjectEuler.Utils;
 
 namespace ProjectEuler.Problems
 {
@@ -34,8 +35,7 @@ namespace ProjectEuler.Problems
 
         public string Run()
         {
-            FileStream fs = new FileStream(@"C:\LocalDocuments\Visual Studio 2017\Projects\ProjectEuler\ProjectEuler\Problems\Problem13\Numbers.txt", FileMode.Open);
-            StreamReader reader = new StreamReader(fs);
+            var reader = FileHelper.ForProblem(13).OpenFile("Numbers.txt");
             string s1 = reader.ReadLine(), s2;
             
             while (!reader.EndOfStream)

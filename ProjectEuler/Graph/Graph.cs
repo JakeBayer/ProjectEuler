@@ -2,15 +2,13 @@
 
 namespace ProjectEuler.Graph
 {
-    class Graph<T>
+    public class Graph<T>
     {
-        private readonly IDictionary<T, HashSet<T>> _neighbors;
-
         public Graph(IDictionary<T, HashSet<T>> nodes)
         {
-            _neighbors = nodes;
+            Neighbors = nodes;
         }
 
-        public IDictionary<T, HashSet<T>> Neighbors => _neighbors;
+        public IDictionary<T, HashSet<T>> Neighbors { get; }
     }
 }

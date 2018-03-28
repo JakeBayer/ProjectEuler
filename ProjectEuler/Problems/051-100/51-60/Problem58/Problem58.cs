@@ -1,4 +1,5 @@
 ﻿using MathUtil.NumberTheory;
+using MathUtil.NumberTheory.Extensions;
 using ProjectEuler.Utils;
 
 namespace ProjectEuler.Problems
@@ -19,7 +20,7 @@ namespace ProjectEuler.Problems
             for (int i = 0; i < 4; i++)
             {
                 lastCorner += spiralSize - 1;
-                if (Prime.IsPrime(lastCorner))
+                if (lastCorner.IsPrime())
                 {
                     numPrimeDiagonals++;
                 }
