@@ -1,7 +1,9 @@
-﻿namespace Sudoku.BoardUtil.Parser
+﻿using System.Collections.Generic;
+
+namespace Sudoku.BoardUtil.Parser
 {
-    public interface IBoardParser
+    public interface IBoardParser<out TValue> where TValue : struct
     {
-        Board Parse(string board);
+        IEnumerable<TValue> Parse(string board, char emptySpaceChar = '0');
     }
 }

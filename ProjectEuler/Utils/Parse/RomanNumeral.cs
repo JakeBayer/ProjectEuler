@@ -10,19 +10,18 @@ namespace ProjectEuler.Utils
     {
         #region Private Fields
         private readonly string _romanNumeral;
-        private readonly int _value;
         #endregion
 
         #region Constructors
         public RomanNumeral(string romanNumeral)
         {
             _romanNumeral = romanNumeral;
-            _value = Parse(romanNumeral);
+            Value = Parse(romanNumeral);
         }
 
         public RomanNumeral(int value)
         {
-            _value = value;
+            Value = value;
             _romanNumeral = ToRomanNumeral(value);
         }
         #endregion
@@ -30,6 +29,7 @@ namespace ProjectEuler.Utils
         #region Constants
         private class Numeral
         {
+            // ReSharper disable InconsistentNaming
             public const string I = "I";
             public const string IV = "IV";
             public const string V = "V";
@@ -43,8 +43,9 @@ namespace ProjectEuler.Utils
             public const string D = "D";
             public const string CM = "CM";
             public const string M = "M";
+            // ReSharper restore InconsistentNaming
 
-            public static readonly string[] InDescendingOrder = new []{ M, CM, D, CD, C, XC, L, XL, X, IX, V, IV, I };
+            public static readonly string[] InDescendingOrder = { M, CM, D, CD, C, XC, L, XL, X, IX, V, IV, I };
         }
 
         private static readonly Dictionary<string, int> s_numeralValue = new Dictionary<string, int>
@@ -262,7 +263,7 @@ namespace ProjectEuler.Utils
         }
         #endregion
 
-        public int Value => _value;
+        public int Value { get; }
 
         public override string ToString()
         {

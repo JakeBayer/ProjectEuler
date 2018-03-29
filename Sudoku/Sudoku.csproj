@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardUtil\Board.cs" />
+    <Compile Include="Board\Grid.cs" />
+    <Compile Include="Board\Square\ISquare.cs" />
+    <Compile Include="Board\SudokuBoard.cs" />
     <Compile Include="BoardUtil\BoardFactory.cs" />
     <Compile Include="BoardUtil\Parser\IBoardParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
