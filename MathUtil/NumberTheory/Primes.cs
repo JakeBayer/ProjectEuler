@@ -99,6 +99,28 @@ namespace MathUtil.NumberTheory
 
         public class Factorization : Dictionary<long, int>
         {
+            public long Value()
+            {
+                long product = 1L;
+                foreach (var (prime, exp) in this)
+                {
+                    for (var i = 0; i < exp; i++)
+                    {
+                        product *= prime;
+                    }
+                }
+                return product;
+            }
+
+            public Factorization()
+            {
+
+            }
+            public Factorization(Factorization other) : base(other)
+            {
+
+            }
+
             public long SumOfFactors
             {
                 get { return this.Aggregate<KeyValuePair<long, int>, long>(1, (current, primeFactor) => current * (((long)Math.Pow(primeFactor.Key, primeFactor.Value + 1) - 1) / (primeFactor.Key - 1))); }
@@ -112,6 +134,80 @@ namespace MathUtil.NumberTheory
             public static Dictionary<long, Factorization> Of(IEnumerable<long> numbers)
             {
                 return Factorizer.Factorize(numbers);
+            }
+
+            public Factorization MultiplyBy(long by)
+            {
+                return MultiplyBy(Factorization.Of(by));
+            }
+
+            public Factorization MultiplyBy(Factorization by)
+            {
+                foreach (var (prime, exp) in by)
+                {
+                    if (!this.ContainsKey(prime))
+                    {
+                        this.Add(prime, 0);
+                    }
+                    this[prime] += exp;
+                }
+                return this;
+            }
+
+            public Factorization MultiplyByPrime(long prime)
+            {
+                if (!this.ContainsKey(prime))
+                {
+                    this.Add(prime, 0);
+                }
+                this[prime]++;
+                return this;
+            }
+
+            public Factorization DivideBy(long by)
+            {
+                return DivideBy(Factorization.Of(by));
+            }
+
+            public Factorization DivideBy(Factorization by)
+            {
+                foreach (var (prime, exp) in by)
+                {
+                    if (!this.ContainsKey(prime) || this[prime] < exp)
+                    {
+                        throw new InvalidOperationException($"{this.Value()} is not divisible by {prime}");
+                    }
+                }
+
+                foreach (var (prime, exp) in by)
+                {
+                    this[prime] -= exp;
+                    if (this[prime] == 0)
+                    {
+                        this.Remove(prime);
+                    }
+                }
+                return this;
+            }
+
+            public Factorization DivideByPrime(long prime)
+            {
+                if (!this.ContainsKey(prime))
+                {
+                    throw new InvalidOperationException($"{this.Value()} is not divisible by {prime}");
+                }
+
+                this[prime]--;
+                if (this[prime] == 0)
+                {
+                    this.Remove(prime);
+                }
+                return this;
+            }
+
+            public string ToString()
+            {
+                return $"{Value()} {string.Join(",", this.Select(kvp => $"({kvp.Key}, {kvp.Value})"))}";
             }
         }
 
